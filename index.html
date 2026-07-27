@@ -353,56 +353,63 @@
 
         /* Company Logo Section Styles */
         .company-sector-group {
-            margin-bottom: 16px;
+            margin-bottom: 20px;
         }
 
         .sector-title {
             font-weight: 700;
-            font-size: 13.5px;
+            font-size: 14px;
             color: var(--primary);
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            border-bottom: 1px solid var(--border);
-            padding-bottom: 4px;
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 5px;
         }
 
         .company-logo-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+            gap: 12px;
             align-items: center;
         }
 
         .logo-card {
             display: flex;
+            flex-direction: column;
             align-items: center;
-            gap: 8px;
+            justify-content: center;
             background: #ffffff;
             border: 1px solid var(--border);
-            padding: 6px 12px;
-            border-radius: 8px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+            padding: 10px 8px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.04);
             transition: all 0.2s ease;
+            height: 68px;
         }
 
         .logo-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 14px rgba(37, 99, 235, 0.12);
             border-color: var(--accent);
         }
 
         .logo-card img {
-            width: 22px;
-            height: 22px;
+            max-width: 90%;
+            max-height: 32px;
             object-fit: contain;
-            border-radius: 3px;
         }
 
         .logo-card span {
-            font-size: 13px;
-            font-weight: 600;
-            color: var(--text);
+            font-size: 11.5px;
+            font-weight: 700;
+            color: var(--text-muted);
+            margin-top: 4px;
+            text-align: center;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 100%;
         }
 
         /* Responsive Table Container */
@@ -451,8 +458,8 @@
         .info-box {
             background: #eff6ff;
             border-left: 5px solid var(--accent);
-            padding: 16px 18px;
-            border-radius: 8px;
+            padding: 18px 20px;
+            border-radius: 10px;
             font-size: 14px;
             margin-bottom: 18px;
         }
@@ -745,6 +752,10 @@
                 grid-template-columns: 1fr;
             }
 
+            .company-logo-grid {
+                grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            }
+
             .institute-header h2 {
                 font-size: 17px;
             }
@@ -983,7 +994,7 @@
                     </div>
                 </div>
 
-                <!-- 1. UPLOAD RANK CARD (30 to 50 KB) - Centered below Rank Section and above B.Tech Section -->
+                <!-- 1. UPLOAD RANK CARD (30 to 50 KB) -->
                 <div class="doc-upload-container">
                     <div class="doc-upload-content">
                         <span class="doc-upload-title">📄 Upload Rank Card</span>
@@ -1013,7 +1024,7 @@
                     </div>
                 </div>
 
-                <!-- 2. UPLOAD CMM (Consolidated Marks Memo) - Centered between B.Tech Section and Career Preference Section -->
+                <!-- 2. UPLOAD CMM (Consolidated Marks Memo) -->
                 <div class="doc-upload-container">
                     <div class="doc-upload-content">
                         <span class="doc-upload-title">📜 Upload Your CMM (Consolidated Marks Memo)</span>
@@ -1028,25 +1039,25 @@
                 <!-- 1. Preferences -->
                 <div class="section-header">1. Career Preferences</div>
                 
-                <!-- Company Logos Categorized by Sector -->
+                <!-- Company Logos Categorized by Sector (Prominent Logo-First Display) -->
                 <div class="info-box">
-                    <p style="font-weight: 700; margin-bottom: 14px; font-size: 15px; color: var(--primary);">🏢 Past Visiting Companies (Sector-Wise):</p>
+                    <p style="font-weight: 700; margin-bottom: 16px; font-size: 15px; color: var(--primary);">🏢 Past Visiting Companies (Sector-Wise):</p>
                     
                     <!-- Service Sector -->
                     <div class="company-sector-group">
                         <div class="sector-title">💼 Service Sector</div>
                         <div class="company-logo-grid">
-                            <div class="logo-card"><img src="https://logo.clearbit.com/tcs.com" alt="TCS" onerror="this.style.display='none'"><span>TCS</span></div>
-                            <div class="logo-card"><img src="https://logo.clearbit.com/infosys.com" alt="Infosys" onerror="this.style.display='none'"><span>Infosys</span></div>
-                            <div class="logo-card"><img src="https://logo.clearbit.com/cognizant.com" alt="Cognizant" onerror="this.style.display='none'"><span>Cognizant</span></div>
-                            <div class="logo-card"><img src="https://logo.clearbit.com/wipro.com" alt="Wipro" onerror="this.style.display='none'"><span>Wipro</span></div>
-                            <div class="logo-card"><img src="https://logo.clearbit.com/accenture.com" alt="Accenture" onerror="this.style.display='none'"><span>Accenture</span></div>
-                            <div class="logo-card"><img src="https://logo.clearbit.com/wellsfargo.com" alt="Wells Fargo" onerror="this.style.display='none'"><span>Wells Fargo</span></div>
-                            <div class="logo-card"><img src="https://logo.clearbit.com/adp.com" alt="ADP" onerror="this.style.display='none'"><span>ADP</span></div>
-                            <div class="logo-card"><img src="https://logo.clearbit.com/virtusa.com" alt="Virtusa" onerror="this.style.display='none'"><span>Virtusa</span></div>
-                            <div class="logo-card"><img src="https://logo.clearbit.com/hcltech.com" alt="HCL" onerror="this.style.display='none'"><span>HCL</span></div>
-                            <div class="logo-card"><img src="https://logo.clearbit.com/ltimindtree.com" alt="LTIMindtree" onerror="this.style.display='none'"><span>LTIMindtree</span></div>
-                            <div class="logo-card"><img src="https://logo.clearbit.com/epam.com" alt="EPAM" onerror="this.style.display='none'"><span>EPAM</span></div>
+                            <div class="logo-card" title="TCS"><img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Tata_Consultancy_Services_Logo.svg" alt="TCS"><span>TCS</span></div>
+                            <div class="logo-card" title="Infosys"><img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Infosys_logo.svg" alt="Infosys"><span>Infosys</span></div>
+                            <div class="logo-card" title="Cognizant"><img src="https://upload.wikimedia.org/wikipedia/commons/2/29/Cognizant_logo_2022.svg" alt="Cognizant"><span>Cognizant</span></div>
+                            <div class="logo-card" title="Wipro"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a0/Wipro_Primary_Logo_Color_RGB.svg" alt="Wipro"><span>Wipro</span></div>
+                            <div class="logo-card" title="Accenture"><img src="https://upload.wikimedia.org/wikipedia/commons/c/cd/Accenture.svg" alt="Accenture"><span>Accenture</span></div>
+                            <div class="logo-card" title="Wells Fargo"><img src="https://upload.wikimedia.org/wikipedia/commons/b/b3/Wells_Fargo_Bank.svg" alt="Wells Fargo"><span>Wells Fargo</span></div>
+                            <div class="logo-card" title="ADP"><img src="https://upload.wikimedia.org/wikipedia/commons/0/00/ADP_logo.svg" alt="ADP"><span>ADP</span></div>
+                            <div class="logo-card" title="Virtusa"><img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Virtusa_logo.svg" alt="Virtusa"><span>Virtusa</span></div>
+                            <div class="logo-card" title="HCL"><img src="https://upload.wikimedia.org/wikipedia/commons/0/03/HCL_Tech_logo.svg" alt="HCL"><span>HCL</span></div>
+                            <div class="logo-card" title="LTIMindtree"><img src="https://upload.wikimedia.org/wikipedia/commons/0/0d/LTIMindtree_Logo.svg" alt="LTIMindtree"><span>LTIMindtree</span></div>
+                            <div class="logo-card" title="EPAM"><img src="https://upload.wikimedia.org/wikipedia/commons/0/08/EPAM_LOGO.svg" alt="EPAM"><span>EPAM</span></div>
                         </div>
                     </div>
 
@@ -1054,14 +1065,14 @@
                     <div class="company-sector-group">
                         <div class="sector-title">🚀 Product Sector</div>
                         <div class="company-logo-grid">
-                            <div class="logo-card"><img src="https://logo.clearbit.com/servicenow.com" alt="ServiceNow" onerror="this.style.display='none'"><span>ServiceNow</span></div>
-                            <div class="logo-card"><img src="https://logo.clearbit.com/ibm.com" alt="IBM" onerror="this.style.display='none'"><span>IBM</span></div>
-                            <div class="logo-card"><img src="https://logo.clearbit.com/nttdata.com" alt="NTT Data" onerror="this.style.display='none'"><span>NTT Data</span></div>
-                            <div class="logo-card"><img src="https://logo.clearbit.com/dbs.com" alt="DBS" onerror="this.style.display='none'"><span>DBS</span></div>
-                            <div class="logo-card"><img src="https://logo.clearbit.com/deloitte.com" alt="Deloitte" onerror="this.style.display='none'"><span>Deloitte</span></div>
-                            <div class="logo-card"><img src="https://logo.clearbit.com/verisk.com" alt="Verisk" onerror="this.style.display='none'"><span>Verisk</span></div>
-                            <div class="logo-card"><img src="https://logo.clearbit.com/modak.com" alt="Modak Analytics" onerror="this.style.display='none'"><span>Modak Analytics</span></div>
-                            <div class="logo-card"><img src="https://logo.clearbit.com/nalsoft.com" alt="Nalsoft" onerror="this.style.display='none'"><span>Nalsoft</span></div>
+                            <div class="logo-card" title="ServiceNow"><img src="https://upload.wikimedia.org/wikipedia/commons/5/53/ServiceNow_logo.svg" alt="ServiceNow"><span>ServiceNow</span></div>
+                            <div class="logo-card" title="IBM"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" alt="IBM"><span>IBM</span></div>
+                            <div class="logo-card" title="NTT Data"><img src="https://upload.wikimedia.org/wikipedia/commons/8/82/NTT_Data_Logo.svg" alt="NTT Data"><span>NTT Data</span></div>
+                            <div class="logo-card" title="DBS"><img src="https://upload.wikimedia.org/wikipedia/commons/1/1a/DBS_Bank_logo.svg" alt="DBS"><span>DBS</span></div>
+                            <div class="logo-card" title="Deloitte"><img src="https://upload.wikimedia.org/wikipedia/commons/2/2b/Deloitte.svg" alt="Deloitte"><span>Deloitte</span></div>
+                            <div class="logo-card" title="Verisk"><img src="https://upload.wikimedia.org/wikipedia/commons/1/1e/Verisk_Analytics_logo.svg" alt="Verisk"><span>Verisk</span></div>
+                            <div class="logo-card" title="Modak Analytics"><img src="https://logo.clearbit.com/modak.com" alt="Modak Analytics"><span>Modak Analytics</span></div>
+                            <div class="logo-card" title="Nalsoft"><img src="https://logo.clearbit.com/nalsoft.com" alt="Nalsoft"><span>Nalsoft</span></div>
                         </div>
                     </div>
 
@@ -1069,15 +1080,15 @@
                     <div class="company-sector-group" style="margin-bottom: 0;">
                         <div class="sector-title">⚙️ Core Sector</div>
                         <div class="company-logo-grid">
-                            <div class="logo-card"><img src="https://logo.clearbit.com/jsw.in" alt="JSW" onerror="this.style.display='none'"><span>JSW</span></div>
-                            <div class="logo-card"><img src="https://logo.clearbit.com/jindalsaw.com" alt="Jindal Saw" onerror="this.style.display='none'"><span>Jindal Saw</span></div>
-                            <div class="logo-card"><img src="https://logo.clearbit.com/mobis.co.kr" alt="Hyundai Mobis" onerror="this.style.display='none'"><span>Hyundai Mobis</span></div>
-                            <div class="logo-card"><img src="https://logo.clearbit.com/ge.com" alt="BHEL GE" onerror="this.style.display='none'"><span>BHEL GE</span></div>
-                            <div class="logo-card"><img src="https://logo.clearbit.com/cyient.com" alt="Cyient" onerror="this.style.display='none'"><span>Cyient</span></div>
-                            <div class="logo-card"><img src="https://logo.clearbit.com/amararajagroup.com" alt="Amara Raja" onerror="this.style.display='none'"><span>Amara Raja</span></div>
-                            <div class="logo-card"><img src="https://logo.clearbit.com/medhaservo.com" alt="Medha Servo Drives" onerror="this.style.display='none'"><span>Medha Servo Drives</span></div>
-                            <div class="logo-card"><img src="https://logo.clearbit.com/siemens.com" alt="Siemens" onerror="this.style.display='none'"><span>Siemens</span></div>
-                            <div class="logo-card"><img src="https://logo.clearbit.com/hitachi.com" alt="Hitachi" onerror="this.style.display='none'"><span>Hitachi</span></div>
+                            <div class="logo-card" title="JSW"><img src="https://upload.wikimedia.org/wikipedia/commons/3/30/JSW_Group_logo.svg" alt="JSW"><span>JSW</span></div>
+                            <div class="logo-card" title="Jindal Saw"><img src="https://logo.clearbit.com/jindalsaw.com" alt="Jindal Saw"><span>Jindal Saw</span></div>
+                            <div class="logo-card" title="Hyundai Mobis"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c9/Hyundai_Mobis_logo.svg" alt="Hyundai Mobis"><span>Hyundai Mobis</span></div>
+                            <div class="logo-card" title="BHEL GE"><img src="https://upload.wikimedia.org/wikipedia/commons/f/ff/General_Electric_logo.svg" alt="BHEL GE"><span>BHEL GE</span></div>
+                            <div class="logo-card" title="Cyient"><img src="https://upload.wikimedia.org/wikipedia/commons/c/cb/Cyient_Logo.svg" alt="Cyient"><span>Cyient</span></div>
+                            <div class="logo-card" title="Amara Raja"><img src="https://logo.clearbit.com/amararajagroup.com" alt="Amara Raja"><span>Amara Raja</span></div>
+                            <div class="logo-card" title="Medha Servo"><img src="https://logo.clearbit.com/medhaservo.com" alt="Medha Servo"><span>Medha Servo</span></div>
+                            <div class="logo-card" title="Siemens"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Siemens-logo.svg" alt="Siemens"><span>Siemens</span></div>
+                            <div class="logo-card" title="Hitachi"><img src="https://upload.wikimedia.org/wikipedia/commons/2/20/Hitachi_logo.svg" alt="Hitachi"><span>Hitachi</span></div>
                         </div>
                     </div>
                 </div>
