@@ -351,6 +351,60 @@
             pointer-events: none;
         }
 
+        /* Company Logo Section Styles */
+        .company-sector-group {
+            margin-bottom: 16px;
+        }
+
+        .sector-title {
+            font-weight: 700;
+            font-size: 13.5px;
+            color: var(--primary);
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 4px;
+        }
+
+        .company-logo-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .logo-card {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: #ffffff;
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+            transition: all 0.2s ease;
+        }
+
+        .logo-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            border-color: var(--accent);
+        }
+
+        .logo-card img {
+            width: 22px;
+            height: 22px;
+            object-fit: contain;
+            border-radius: 3px;
+        }
+
+        .logo-card span {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text);
+        }
+
         /* Responsive Table Container */
         .table-responsive {
             width: 100%;
@@ -397,8 +451,8 @@
         .info-box {
             background: #eff6ff;
             border-left: 5px solid var(--accent);
-            padding: 14px 16px;
-            border-radius: 6px;
+            padding: 16px 18px;
+            border-radius: 8px;
             font-size: 14px;
             margin-bottom: 18px;
         }
@@ -973,11 +1027,59 @@
 
                 <!-- 1. Preferences -->
                 <div class="section-header">1. Career Preferences</div>
+                
+                <!-- Company Logos Categorized by Sector -->
                 <div class="info-box">
-                    <p><strong>Past Visiting Companies:</strong></p>
-                    <p><strong>Service:</strong> TCS, Infosys, Cognizant, Wipro, Accenture, Wells Fargo, ADP, Virtusa, HCL, LTIMindtree, EPAM, etc.</p>
-                    <p><strong>Product:</strong> ServiceNow, IBM, NTT Data, DBS, Deloitte, Verisk, Modak Analytics, Nalsoft, etc.</p>
-                    <p><strong>Core:</strong> JSW, Jindal Saw, Hyundai Mobis, BHEL GE, Cyient, Amara Raja, Medha Servo Drives, Siemens, Hitachi, etc.</p>
+                    <p style="font-weight: 700; margin-bottom: 14px; font-size: 15px; color: var(--primary);">🏢 Past Visiting Companies (Sector-Wise):</p>
+                    
+                    <!-- Service Sector -->
+                    <div class="company-sector-group">
+                        <div class="sector-title">💼 Service Sector</div>
+                        <div class="company-logo-grid">
+                            <div class="logo-card"><img src="https://logo.clearbit.com/tcs.com" alt="TCS" onerror="this.style.display='none'"><span>TCS</span></div>
+                            <div class="logo-card"><img src="https://logo.clearbit.com/infosys.com" alt="Infosys" onerror="this.style.display='none'"><span>Infosys</span></div>
+                            <div class="logo-card"><img src="https://logo.clearbit.com/cognizant.com" alt="Cognizant" onerror="this.style.display='none'"><span>Cognizant</span></div>
+                            <div class="logo-card"><img src="https://logo.clearbit.com/wipro.com" alt="Wipro" onerror="this.style.display='none'"><span>Wipro</span></div>
+                            <div class="logo-card"><img src="https://logo.clearbit.com/accenture.com" alt="Accenture" onerror="this.style.display='none'"><span>Accenture</span></div>
+                            <div class="logo-card"><img src="https://logo.clearbit.com/wellsfargo.com" alt="Wells Fargo" onerror="this.style.display='none'"><span>Wells Fargo</span></div>
+                            <div class="logo-card"><img src="https://logo.clearbit.com/adp.com" alt="ADP" onerror="this.style.display='none'"><span>ADP</span></div>
+                            <div class="logo-card"><img src="https://logo.clearbit.com/virtusa.com" alt="Virtusa" onerror="this.style.display='none'"><span>Virtusa</span></div>
+                            <div class="logo-card"><img src="https://logo.clearbit.com/hcltech.com" alt="HCL" onerror="this.style.display='none'"><span>HCL</span></div>
+                            <div class="logo-card"><img src="https://logo.clearbit.com/ltimindtree.com" alt="LTIMindtree" onerror="this.style.display='none'"><span>LTIMindtree</span></div>
+                            <div class="logo-card"><img src="https://logo.clearbit.com/epam.com" alt="EPAM" onerror="this.style.display='none'"><span>EPAM</span></div>
+                        </div>
+                    </div>
+
+                    <!-- Product Sector -->
+                    <div class="company-sector-group">
+                        <div class="sector-title">🚀 Product Sector</div>
+                        <div class="company-logo-grid">
+                            <div class="logo-card"><img src="https://logo.clearbit.com/servicenow.com" alt="ServiceNow" onerror="this.style.display='none'"><span>ServiceNow</span></div>
+                            <div class="logo-card"><img src="https://logo.clearbit.com/ibm.com" alt="IBM" onerror="this.style.display='none'"><span>IBM</span></div>
+                            <div class="logo-card"><img src="https://logo.clearbit.com/nttdata.com" alt="NTT Data" onerror="this.style.display='none'"><span>NTT Data</span></div>
+                            <div class="logo-card"><img src="https://logo.clearbit.com/dbs.com" alt="DBS" onerror="this.style.display='none'"><span>DBS</span></div>
+                            <div class="logo-card"><img src="https://logo.clearbit.com/deloitte.com" alt="Deloitte" onerror="this.style.display='none'"><span>Deloitte</span></div>
+                            <div class="logo-card"><img src="https://logo.clearbit.com/verisk.com" alt="Verisk" onerror="this.style.display='none'"><span>Verisk</span></div>
+                            <div class="logo-card"><img src="https://logo.clearbit.com/modak.com" alt="Modak Analytics" onerror="this.style.display='none'"><span>Modak Analytics</span></div>
+                            <div class="logo-card"><img src="https://logo.clearbit.com/nalsoft.com" alt="Nalsoft" onerror="this.style.display='none'"><span>Nalsoft</span></div>
+                        </div>
+                    </div>
+
+                    <!-- Core Sector -->
+                    <div class="company-sector-group" style="margin-bottom: 0;">
+                        <div class="sector-title">⚙️ Core Sector</div>
+                        <div class="company-logo-grid">
+                            <div class="logo-card"><img src="https://logo.clearbit.com/jsw.in" alt="JSW" onerror="this.style.display='none'"><span>JSW</span></div>
+                            <div class="logo-card"><img src="https://logo.clearbit.com/jindalsaw.com" alt="Jindal Saw" onerror="this.style.display='none'"><span>Jindal Saw</span></div>
+                            <div class="logo-card"><img src="https://logo.clearbit.com/mobis.co.kr" alt="Hyundai Mobis" onerror="this.style.display='none'"><span>Hyundai Mobis</span></div>
+                            <div class="logo-card"><img src="https://logo.clearbit.com/ge.com" alt="BHEL GE" onerror="this.style.display='none'"><span>BHEL GE</span></div>
+                            <div class="logo-card"><img src="https://logo.clearbit.com/cyient.com" alt="Cyient" onerror="this.style.display='none'"><span>Cyient</span></div>
+                            <div class="logo-card"><img src="https://logo.clearbit.com/amararajagroup.com" alt="Amara Raja" onerror="this.style.display='none'"><span>Amara Raja</span></div>
+                            <div class="logo-card"><img src="https://logo.clearbit.com/medhaservo.com" alt="Medha Servo Drives" onerror="this.style.display='none'"><span>Medha Servo Drives</span></div>
+                            <div class="logo-card"><img src="https://logo.clearbit.com/siemens.com" alt="Siemens" onerror="this.style.display='none'"><span>Siemens</span></div>
+                            <div class="logo-card"><img src="https://logo.clearbit.com/hitachi.com" alt="Hitachi" onerror="this.style.display='none'"><span>Hitachi</span></div>
+                        </div>
+                    </div>
                 </div>
 
                 <label style="font-weight: bold; margin-top: 15px; display: block;">1.1 Select Option (Choose ONLY ONE out of 7):</label>
@@ -1061,14 +1163,40 @@
                         </label>
                     </div>
 
+                    <!-- Signatures and Signature File Uploads (30 KB to 50 KB) -->
                     <div class="sig-grid">
                         <div class="form-group">
-                            <label>Student Signature / Confirmation:</label>
-                            <input type="text" name="student_sig" placeholder="Type Full Name" required>
+                            <label for="student_sig">Student Signature Name:</label>
+                            <input type="text" id="student_sig" name="student_sig" placeholder="Type Full Name" required>
+                            
+                            <!-- Student Signature Upload Box -->
+                            <div class="doc-upload-container" style="margin: 12px 0 0 0; padding: 12px; max-width: 100%;">
+                                <div class="doc-upload-content">
+                                    <span class="doc-upload-title" style="font-size: 13.5px;">✍️ Upload Student Signature</span>
+                                    <span class="doc-btn-label" style="padding: 6px 14px; font-size: 12.5px;">📎 Choose Signature File</span>
+                                    <input type="file" id="student_sig_file" name="student_sig_file" accept="image/*,.pdf">
+                                    <span class="file-size-hint">(Required File Size: 30 KB to 50 KB)</span>
+                                    <div class="file-error-msg" id="studentSigErrorMsg">File size must be between 30 KB and 50 KB.</div>
+                                    <div class="file-success-msg" id="studentSigSuccessMsg">✓ Signature uploaded successfully.</div>
+                                </div>
+                            </div>
                         </div>
+
                         <div class="form-group">
-                            <label>Parent Signature / Confirmation:</label>
-                            <input type="text" name="parent_sig" placeholder="Type Parent Name" required>
+                            <label for="parent_sig">Parent Signature Name:</label>
+                            <input type="text" id="parent_sig" name="parent_sig" placeholder="Type Parent Name" required>
+                            
+                            <!-- Parent Signature Upload Box -->
+                            <div class="doc-upload-container" style="margin: 12px 0 0 0; padding: 12px; max-width: 100%;">
+                                <div class="doc-upload-content">
+                                    <span class="doc-upload-title" style="font-size: 13.5px;">✍️ Upload Parent Signature</span>
+                                    <span class="doc-btn-label" style="padding: 6px 14px; font-size: 12.5px;">📎 Choose Signature File</span>
+                                    <input type="file" id="parent_sig_file" name="parent_sig_file" accept="image/*,.pdf">
+                                    <span class="file-size-hint">(Required File Size: 30 KB to 50 KB)</span>
+                                    <div class="file-error-msg" id="parentSigErrorMsg">File size must be between 30 KB and 50 KB.</div>
+                                    <div class="file-success-msg" id="parentSigSuccessMsg">✓ Signature uploaded successfully.</div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1161,8 +1289,7 @@
             rankSuccessMsg.style.display = 'none';
             return;
         }
-        const minBytes = 30 * 1024; // 30 KB
-        const maxBytes = 50 * 1024; // 50 KB
+        const minBytes = 30 * 1024, maxBytes = 50 * 1024;
 
         if (file.size < minBytes || file.size > maxBytes) {
             rankErrorMsg.style.display = 'block';
@@ -1193,8 +1320,7 @@
             cmmSuccessMsg.style.display = 'none';
             return;
         }
-        const minBytes = 30 * 1024; // 30 KB
-        const maxBytes = 100 * 1024; // 100 KB
+        const minBytes = 30 * 1024, maxBytes = 100 * 1024;
 
         if (file.size < minBytes || file.size > maxBytes) {
             cmmErrorMsg.style.display = 'block';
@@ -1209,6 +1335,68 @@
         cmmFileName = `${file.name} (${(file.size / 1024).toFixed(1)} KB)`;
         cmmSuccessMsg.style.display = 'block';
         cmmSuccessMsg.innerText = `✓ Selected: ${cmmFileName}`;
+    });
+
+    // 3. Student Signature File Validation (30 KB to 50 KB)
+    const studentSigInput = document.getElementById('student_sig_file');
+    const studentSigErrorMsg = document.getElementById('studentSigErrorMsg');
+    const studentSigSuccessMsg = document.getElementById('studentSigSuccessMsg');
+    let studentSigFileName = null;
+
+    studentSigInput.addEventListener('change', function(e) {
+        const file = e.target.files[0];
+        if (!file) {
+            studentSigFileName = null;
+            studentSigErrorMsg.style.display = 'none';
+            studentSigSuccessMsg.style.display = 'none';
+            return;
+        }
+        const minBytes = 30 * 1024, maxBytes = 50 * 1024;
+
+        if (file.size < minBytes || file.size > maxBytes) {
+            studentSigErrorMsg.style.display = 'block';
+            studentSigErrorMsg.innerText = `Invalid size (${(file.size / 1024).toFixed(1)} KB). Size must be between 30 KB and 50 KB.`;
+            studentSigSuccessMsg.style.display = 'none';
+            studentSigInput.value = '';
+            studentSigFileName = null;
+            return;
+        }
+
+        studentSigErrorMsg.style.display = 'none';
+        studentSigFileName = `${file.name} (${(file.size / 1024).toFixed(1)} KB)`;
+        studentSigSuccessMsg.style.display = 'block';
+        studentSigSuccessMsg.innerText = `✓ Selected: ${studentSigFileName}`;
+    });
+
+    // 4. Parent Signature File Validation (30 KB to 50 KB)
+    const parentSigInput = document.getElementById('parent_sig_file');
+    const parentSigErrorMsg = document.getElementById('parentSigErrorMsg');
+    const parentSigSuccessMsg = document.getElementById('parentSigSuccessMsg');
+    let parentSigFileName = null;
+
+    parentSigInput.addEventListener('change', function(e) {
+        const file = e.target.files[0];
+        if (!file) {
+            parentSigFileName = null;
+            parentSigErrorMsg.style.display = 'none';
+            parentSigSuccessMsg.style.display = 'none';
+            return;
+        }
+        const minBytes = 30 * 1024, maxBytes = 50 * 1024;
+
+        if (file.size < minBytes || file.size > maxBytes) {
+            parentSigErrorMsg.style.display = 'block';
+            parentSigErrorMsg.innerText = `Invalid size (${(file.size / 1024).toFixed(1)} KB). Size must be between 30 KB and 50 KB.`;
+            parentSigSuccessMsg.style.display = 'none';
+            parentSigInput.value = '';
+            parentSigFileName = null;
+            return;
+        }
+
+        parentSigErrorMsg.style.display = 'none';
+        parentSigFileName = `${file.name} (${(file.size / 1024).toFixed(1)} KB)`;
+        parentSigSuccessMsg.style.display = 'block';
+        parentSigSuccessMsg.innerText = `✓ Selected: ${parentSigFileName}`;
     });
 
     // Modal elements
@@ -1359,8 +1547,10 @@
                 <h4>2. Guidelines Agreement & Signatures</h4>
                 <div class="preview-grid">
                     <div class="preview-item full-width"><label>Undertaking Confirmation</label><span>${document.getElementById('undertaking_agree').checked ? '✅ Agreed & Accepted' : '❌ Not Agreed'}</span></div>
-                    <div class="preview-item"><label>Student Signature</label><span>${formData.get('student_sig') || 'N/A'}</span></div>
-                    <div class="preview-item"><label>Parent Signature</label><span>${formData.get('parent_sig') || 'N/A'}</span></div>
+                    <div class="preview-item"><label>Student Signature Name</label><span>${formData.get('student_sig') || 'N/A'}</span></div>
+                    <div class="preview-item"><label>Student Signature File</label><span>${studentSigFileName ? '✅ ' + studentSigFileName : '❌ Not Uploaded'}</span></div>
+                    <div class="preview-item"><label>Parent Signature Name</label><span>${formData.get('parent_sig') || 'N/A'}</span></div>
+                    <div class="preview-item"><label>Parent Signature File</label><span>${parentSigFileName ? '✅ ' + parentSigFileName : '❌ Not Uploaded'}</span></div>
                 </div>
             </div>
         `;
