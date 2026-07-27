@@ -351,66 +351,15 @@
             pointer-events: none;
         }
 
-        /* Ultra-Reliable Micro Company Badge Styles */
-        .company-sector-group {
-            margin-bottom: 18px;
+        /* Sector Text Formatting */
+        .sector-text-block {
+            margin-bottom: 12px;
+            font-size: 14px;
+            line-height: 1.6;
         }
 
-        .sector-title {
-            font-weight: 700;
-            font-size: 13.5px;
+        .sector-text-block strong {
             color: var(--primary);
-            margin-bottom: 10px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            border-bottom: 1.5px solid var(--border);
-            padding-bottom: 4px;
-        }
-
-        .company-logo-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            align-items: center;
-        }
-
-        .logo-card {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            background: #ffffff;
-            border: 1px solid #cbd5e1;
-            padding: 6px;
-            border-radius: 10px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
-            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-            width: 48px;
-            height: 48px;
-            cursor: pointer;
-            position: relative;
-        }
-
-        .logo-card:hover {
-            transform: translateY(-3px) scale(1.12);
-            box-shadow: 0 6px 14px rgba(37, 99, 235, 0.25);
-            border-color: var(--accent);
-            z-index: 10;
-        }
-
-        .logo-card img {
-            width: 32px;
-            height: 32px;
-            object-fit: contain;
-            border-radius: 4px;
-        }
-
-        .logo-fallback {
-            font-size: 11px;
-            font-weight: 800;
-            color: var(--primary);
-            text-transform: uppercase;
-            text-align: center;
-            line-height: 1;
         }
 
         /* Responsive Table Container */
@@ -1036,138 +985,18 @@
                 <!-- 1. Preferences -->
                 <div class="section-header">1. Career Preferences</div>
                 
-                <!-- Company Micro Logos Categorized by Sector (Google Favicons with Text Abbr Fallbacks) -->
+                <!-- Company List (Text Format) -->
                 <div class="info-box">
-                    <p style="font-weight: 700; margin-bottom: 14px; font-size: 15px; color: var(--primary);">🏢 Past Visiting Companies (Sector-Wise):</p>
+                    <p style="font-weight: 700; margin-bottom: 12px; font-size: 15px; color: var(--primary);">🏢 Past Visiting Companies (Sector-Wise):</p>
                     
-                    <div class="company-sector-group">
-                        <div class="sector-title">💼 Service Sector</div>
-                        <div class="company-logo-grid">
-                            <div class="logo-card" title="TCS">
-                                <img src="https://www.google.com/s2/favicons?domain=tcs.com&sz=128" alt="TCS" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                                <span class="logo-fallback" style="display:none;">TCS</span>
-                            </div>
-                            <div class="logo-card" title="Infosys">
-                                <img src="https://www.google.com/s2/favicons?domain=infosys.com&sz=128" alt="Infosys" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                                <span class="logo-fallback" style="display:none;">INF</span>
-                            </div>
-                            <div class="logo-card" title="Cognizant">
-                                <img src="https://www.google.com/s2/favicons?domain=cognizant.com&sz=128" alt="Cognizant" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                                <span class="logo-fallback" style="display:none;">COG</span>
-                            </div>
-                            <div class="logo-card" title="Wipro">
-                                <img src="https://www.google.com/s2/favicons?domain=wipro.com&sz=128" alt="Wipro" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                                <span class="logo-fallback" style="display:none;">WIP</span>
-                            </div>
-                            <div class="logo-card" title="Accenture">
-                                <img src="https://www.google.com/s2/favicons?domain=accenture.com&sz=128" alt="Accenture" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                                <span class="logo-fallback" style="display:none;">ACC</span>
-                            </div>
-                            <div class="logo-card" title="Wells Fargo">
-                                <img src="https://www.google.com/s2/favicons?domain=wellsfargo.com&sz=128" alt="Wells Fargo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                                <span class="logo-fallback" style="display:none;">WEL</span>
-                            </div>
-                            <div class="logo-card" title="ADP">
-                                <img src="https://www.google.com/s2/favicons?domain=adp.com&sz=128" alt="ADP" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                                <span class="logo-fallback" style="display:none;">ADP</span>
-                            </div>
-                            <div class="logo-card" title="Virtusa">
-                                <img src="https://www.google.com/s2/favicons?domain=virtusa.com&sz=128" alt="Virtusa" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                                <span class="logo-fallback" style="display:none;">VIR</span>
-                            </div>
-                            <div class="logo-card" title="HCL">
-                                <img src="https://www.google.com/s2/favicons?domain=hcltech.com&sz=128" alt="HCL" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                                <span class="logo-fallback" style="display:none;">HCL</span>
-                            </div>
-                            <div class="logo-card" title="LTIMindtree">
-                                <img src="https://www.google.com/s2/favicons?domain=ltimindtree.com&sz=128" alt="LTIMindtree" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                                <span class="logo-fallback" style="display:none;">LTI</span>
-                            </div>
-                            <div class="logo-card" title="EPAM">
-                                <img src="https://www.google.com/s2/favicons?domain=epam.com&sz=128" alt="EPAM" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                                <span class="logo-fallback" style="display:none;">EPA</span>
-                            </div>
-                        </div>
+                    <div class="sector-text-block">
+                        <strong>💼 Service Sector:</strong> TCS, Infosys, Cognizant, Wipro, Accenture, Wells Fargo, ADP, Virtusa, HCL, LTIMindtree, EPAM
                     </div>
-
-                    <div class="company-sector-group">
-                        <div class="sector-title">🚀 Product Sector</div>
-                        <div class="company-logo-grid">
-                            <div class="logo-card" title="ServiceNow">
-                                <img src="https://www.google.com/s2/favicons?domain=servicenow.com&sz=128" alt="ServiceNow" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                                <span class="logo-fallback" style="display:none;">SER</span>
-                            </div>
-                            <div class="logo-card" title="IBM">
-                                <img src="https://www.google.com/s2/favicons?domain=ibm.com&sz=128" alt="IBM" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                                <span class="logo-fallback" style="display:none;">IBM</span>
-                            </div>
-                            <div class="logo-card" title="NTT Data">
-                                <img src="https://www.google.com/s2/favicons?domain=nttdata.com&sz=128" alt="NTT Data" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                                <span class="logo-fallback" style="display:none;">NTT</span>
-                            </div>
-                            <div class="logo-card" title="DBS">
-                                <img src="https://www.google.com/s2/favicons?domain=dbs.com&sz=128" alt="DBS" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                                <span class="logo-fallback" style="display:none;">DBS</span>
-                            </div>
-                            <div class="logo-card" title="Deloitte">
-                                <img src="https://www.google.com/s2/favicons?domain=deloitte.com&sz=128" alt="Deloitte" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                                <span class="logo-fallback" style="display:none;">DEL</span>
-                            </div>
-                            <div class="logo-card" title="Verisk">
-                                <img src="https://www.google.com/s2/favicons?domain=verisk.com&sz=128" alt="Verisk" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                                <span class="logo-fallback" style="display:none;">VER</span>
-                            </div>
-                            <div class="logo-card" title="Modak Analytics">
-                                <img src="https://www.google.com/s2/favicons?domain=modak.com&sz=128" alt="Modak Analytics" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                                <span class="logo-fallback" style="display:none;">MOD</span>
-                            </div>
-                            <div class="logo-card" title="Nalsoft">
-                                <img src="https://www.google.com/s2/favicons?domain=nalsoft.com&sz=128" alt="Nalsoft" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                                <span class="logo-fallback" style="display:none;">NAL</span>
-                            </div>
-                        </div>
+                    <div class="sector-text-block">
+                        <strong>🚀 Product Sector:</strong> ServiceNow, IBM, NTT Data, DBS, Deloitte, Verisk, Modak Analytics, Nalsoft
                     </div>
-
-                    <div class="company-sector-group">
-                        <div class="sector-title">⚙️ Core Sector</div>
-                        <div class="company-logo-grid">
-                            <div class="logo-card" title="JSW">
-                                <img src="https://www.google.com/s2/favicons?domain=jsw.in&sz=128" alt="JSW" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                                <span class="logo-fallback" style="display:none;">JSW</span>
-                            </div>
-                            <div class="logo-card" title="Jindal Saw">
-                                <img src="https://www.google.com/s2/favicons?domain=jindalsaw.com&sz=128" alt="Jindal Saw" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                                <span class="logo-fallback" style="display:none;">JIN</span>
-                            </div>
-                            <div class="logo-card" title="Hyundai Mobis">
-                                <img src="https://www.google.com/s2/favicons?domain=mobis.co.kr&sz=128" alt="Hyundai Mobis" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                                <span class="logo-fallback" style="display:none;">HYU</span>
-                            </div>
-                            <div class="logo-card" title="BHEL GE">
-                                <img src="https://www.google.com/s2/favicons?domain=ge.com&sz=128" alt="BHEL GE" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                                <span class="logo-fallback" style="display:none;">BHE</span>
-                            </div>
-                            <div class="logo-card" title="Cyient">
-                                <img src="https://www.google.com/s2/favicons?domain=cyient.com&sz=128" alt="Cyient" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                                <span class="logo-fallback" style="display:none;">CYI</span>
-                            </div>
-                            <div class="logo-card" title="Amara Raja">
-                                <img src="https://www.google.com/s2/favicons?domain=amararajagroup.com&sz=128" alt="Amara Raja" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                                <span class="logo-fallback" style="display:none;">AMA</span>
-                            </div>
-                            <div class="logo-card" title="Medha Servo">
-                                <img src="https://www.google.com/s2/favicons?domain=medhaservo.com&sz=128" alt="Medha Servo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                                <span class="logo-fallback" style="display:none;">MED</span>
-                            </div>
-                            <div class="logo-card" title="Siemens">
-                                <img src="https://www.google.com/s2/favicons?domain=siemens.com&sz=128" alt="Siemens" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                                <span class="logo-fallback" style="display:none;">SIE</span>
-                            </div>
-                            <div class="logo-card" title="Hitachi">
-                                <img src="https://www.google.com/s2/favicons?domain=hitachi.com&sz=128" alt="Hitachi" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                                <span class="logo-fallback" style="display:none;">HIT</span>
-                            </div>
-                        </div>
+                    <div class="sector-text-block">
+                        <strong>⚙️ Core Sector:</strong> JSW, Jindal Saw, Hyundai Mobis, BHEL GE, Cyient, Amara Raja, Medha Servo, Siemens, Hitachi
                     </div>
                 </div>
 
@@ -1252,18 +1081,14 @@
                         </label>
                     </div>
 
-                    <!-- Signatures and Signature File Uploads (30 KB to 50 KB) -->
+                    <!-- Signature File Uploads Only (Text boxes removed) -->
                     <div class="sig-grid">
                         <div class="form-group">
-                            <label for="student_sig">Student Signature Name:</label>
-                            <input type="text" id="student_sig" name="student_sig" placeholder="Type Full Name" required>
-                            
-                            <!-- Student Signature Upload Box -->
-                            <div class="doc-upload-container" style="margin: 12px 0 0 0; padding: 12px; max-width: 100%;">
+                            <div class="doc-upload-container" style="margin: 0; padding: 12px; max-width: 100%;">
                                 <div class="doc-upload-content">
                                     <span class="doc-upload-title" style="font-size: 13.5px;">✍️ Upload Student Signature</span>
                                     <span class="doc-btn-label" style="padding: 6px 14px; font-size: 12.5px;">📎 Choose Signature File</span>
-                                    <input type="file" id="student_sig_file" name="student_sig_file" accept="image/*,.pdf">
+                                    <input type="file" id="student_sig_file" name="student_sig_file" accept="image/*,.pdf" required>
                                     <span class="file-size-hint">(Required File Size: 30 KB to 50 KB)</span>
                                     <div class="file-error-msg" id="studentSigErrorMsg">File size must be between 30 KB and 50 KB.</div>
                                     <div class="file-success-msg" id="studentSigSuccessMsg">✓ Signature uploaded successfully.</div>
@@ -1272,15 +1097,11 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="parent_sig">Parent Signature Name:</label>
-                            <input type="text" id="parent_sig" name="parent_sig" placeholder="Type Parent Name" required>
-                            
-                            <!-- Parent Signature Upload Box -->
-                            <div class="doc-upload-container" style="margin: 12px 0 0 0; padding: 12px; max-width: 100%;">
+                            <div class="doc-upload-container" style="margin: 0; padding: 12px; max-width: 100%;">
                                 <div class="doc-upload-content">
                                     <span class="doc-upload-title" style="font-size: 13.5px;">✍️ Upload Parent Signature</span>
                                     <span class="doc-btn-label" style="padding: 6px 14px; font-size: 12.5px;">📎 Choose Signature File</span>
-                                    <input type="file" id="parent_sig_file" name="parent_sig_file" accept="image/*,.pdf">
+                                    <input type="file" id="parent_sig_file" name="parent_sig_file" accept="image/*,.pdf" required>
                                     <span class="file-size-hint">(Required File Size: 30 KB to 50 KB)</span>
                                     <div class="file-error-msg" id="parentSigErrorMsg">File size must be between 30 KB and 50 KB.</div>
                                     <div class="file-success-msg" id="parentSigSuccessMsg">✓ Signature uploaded successfully.</div>
@@ -1636,9 +1457,7 @@
                 <h4>2. Guidelines Agreement & Signatures</h4>
                 <div class="preview-grid">
                     <div class="preview-item full-width"><label>Undertaking Confirmation</label><span>${document.getElementById('undertaking_agree').checked ? '✅ Agreed & Accepted' : '❌ Not Agreed'}</span></div>
-                    <div class="preview-item"><label>Student Signature Name</label><span>${formData.get('student_sig') || 'N/A'}</span></div>
                     <div class="preview-item"><label>Student Signature File</label><span>${studentSigFileName ? '✅ ' + studentSigFileName : '❌ Not Uploaded'}</span></div>
-                    <div class="preview-item"><label>Parent Signature Name</label><span>${formData.get('parent_sig') || 'N/A'}</span></div>
                     <div class="preview-item"><label>Parent Signature File</label><span>${parentSigFileName ? '✅ ' + parentSigFileName : '❌ Not Uploaded'}</span></div>
                 </div>
             </div>
