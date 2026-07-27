@@ -16,6 +16,7 @@
             --text: #0f172a;
             --text-muted: #475569;
             --error: #dc2626;
+            --success: #166534;
         }
 
         * {
@@ -34,7 +35,7 @@
             font-size: 15px;
         }
 
-        /* Decreased Form Container Width */
+        /* Form Container */
         .form-container {
             max-width: 920px;
             margin: 0 auto;
@@ -207,7 +208,7 @@
             box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.15);
         }
 
-        /* Photo Upload Box & Fix */
+        /* Photo Upload Box */
         .photo-upload-wrapper {
             display: flex;
             flex-direction: column;
@@ -269,20 +270,85 @@
             margin-top: 6px;
         }
 
-        .photo-size-hint {
+        .file-size-hint {
             font-size: 11.5px;
             color: #64748b;
             margin-top: 4px;
             text-align: center;
         }
 
-        .photo-error-msg {
+        .file-error-msg {
             color: var(--error);
             font-size: 12px;
             font-weight: 600;
             margin-top: 5px;
             display: none;
             text-align: center;
+        }
+
+        .file-success-msg {
+            color: var(--success);
+            font-size: 12px;
+            font-weight: 600;
+            margin-top: 5px;
+            display: none;
+            text-align: center;
+        }
+
+        /* Centered Document Upload Box Component */
+        .doc-upload-container {
+            margin: 24px auto;
+            padding: 18px 24px;
+            background-color: #f8fafc;
+            border: 2px dashed var(--border);
+            border-radius: 12px;
+            text-align: center;
+            max-width: 580px;
+            position: relative;
+            transition: all 0.2s ease;
+        }
+
+        .doc-upload-container:hover {
+            background-color: #eff6ff;
+            border-color: var(--accent);
+        }
+
+        .doc-upload-container input[type="file"] {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            cursor: pointer;
+            z-index: 5;
+        }
+
+        .doc-upload-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .doc-upload-title {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .doc-btn-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background-color: var(--accent);
+            color: white;
+            padding: 8px 18px;
+            border-radius: 6px;
+            font-size: 13.5px;
+            font-weight: 600;
+            margin-top: 6px;
+            pointer-events: none;
         }
 
         /* Responsive Table Container */
@@ -617,6 +683,10 @@
                 height: 160px;
             }
 
+            .doc-upload-container {
+                padding: 14px 16px;
+            }
+
             .grid-2, .grid-3, .grid-4, .sig-grid, .preview-grid, .preview-grid-3 {
                 grid-template-columns: 1fr;
             }
@@ -753,8 +823,8 @@
                             </div>
                             <input type="file" id="passport_photo" name="passport_photo" accept="image/*">
                         </div>
-                        <span class="photo-size-hint">(Required Size: 10 KB to 30 KB)</span>
-                        <div class="photo-error-msg" id="photoErrorMsg">File size must be between 10 KB and 30 KB.</div>
+                        <span class="file-size-hint">(Required Size: 10 KB to 30 KB)</span>
+                        <div class="file-error-msg" id="photoErrorMsg">File size must be between 10 KB and 30 KB.</div>
                     </div>
                 </div>
 
@@ -859,6 +929,18 @@
                     </div>
                 </div>
 
+                <!-- 1. UPLOAD RANK CARD (30 to 50 KB) - Centered below Rank Section and above B.Tech Section -->
+                <div class="doc-upload-container">
+                    <div class="doc-upload-content">
+                        <span class="doc-upload-title">📄 Upload Rank Card</span>
+                        <span class="doc-btn-label">📎 Choose Rank Card File</span>
+                        <input type="file" id="rank_card_file" name="rank_card_file" accept="image/*,.pdf">
+                        <span class="file-size-hint">(Required File Size: 30 KB to 50 KB)</span>
+                        <div class="file-error-msg" id="rankErrorMsg">File size must be between 30 KB and 50 KB.</div>
+                        <div class="file-success-msg" id="rankSuccessMsg">✓ Rank Card uploaded successfully.</div>
+                    </div>
+                </div>
+
                 <div style="margin-top: 20px;">
                     <label style="font-weight: 700;">Bachelor of Technology:</label>
                     <div class="grid-3" style="margin-top: 10px;">
@@ -874,6 +956,18 @@
                         </div>
                         <div class="form-group"><label>No. of Backlogs:</label><input type="number" name="no_of_backlogs" value="0"></div>
                         <div class="form-group"><label>Education Gap Years (SSC to B.Tech):</label><input type="number" name="edu_gaps" value="0"></div>
+                    </div>
+                </div>
+
+                <!-- 2. UPLOAD CMM (Consolidated Marks Memo) - Centered between B.Tech Section and Career Preference Section -->
+                <div class="doc-upload-container">
+                    <div class="doc-upload-content">
+                        <span class="doc-upload-title">📜 Upload Your CMM (Consolidated Marks Memo)</span>
+                        <span class="doc-btn-label">📎 Choose CMM Document</span>
+                        <input type="file" id="cmm_file" name="cmm_file" accept="image/*,.pdf">
+                        <span class="file-size-hint">(Required File Size: 30 KB to 100 KB)</span>
+                        <div class="file-error-msg" id="cmmErrorMsg">File size must be between 30 KB and 100 KB.</div>
+                        <div class="file-success-msg" id="cmmSuccessMsg">✓ CMM Document uploaded successfully.</div>
                     </div>
                 </div>
 
@@ -1017,32 +1111,24 @@
     const downloadBtn = document.getElementById('downloadBtn');
     const statusMsg = document.getElementById('status-message');
 
-    // Photo elements
+    // Passport Photo elements & validation (10 KB to 30 KB)
     const photoInput = document.getElementById('passport_photo');
     const photoPreviewImg = document.getElementById('photoPreviewImg');
     const photoPlaceholder = document.getElementById('photoPlaceholder');
     const photoErrorMsg = document.getElementById('photoErrorMsg');
     let photoDataURL = null;
 
-    // Photo Size Validation (10 KB to 30 KB)
     photoInput.addEventListener('change', function(e) {
         const file = e.target.files[0];
-        if (!file) {
-            resetPhoto();
-            return;
-        }
-
-        const minSizeBytes = 10 * 1024; // 10 KB
-        const maxSizeBytes = 30 * 1024; // 30 KB
-
-        if (file.size < minSizeBytes || file.size > maxSizeBytes) {
+        if (!file) { resetPhoto(); return; }
+        const minBytes = 10 * 1024, maxBytes = 30 * 1024;
+        if (file.size < minBytes || file.size > maxBytes) {
             photoErrorMsg.style.display = 'block';
-            photoErrorMsg.innerText = `Invalid size (${(file.size / 1024).toFixed(1)} KB). Photo size must be between 10 KB and 30 KB.`;
+            photoErrorMsg.innerText = `Invalid size (${(file.size / 1024).toFixed(1)} KB). Must be between 10 KB and 30 KB.`;
             photoInput.value = '';
             resetPhoto();
             return;
         }
-
         photoErrorMsg.style.display = 'none';
         const reader = new FileReader();
         reader.onload = function(evt) {
@@ -1060,6 +1146,70 @@
         photoPreviewImg.style.display = 'none';
         photoPlaceholder.style.display = 'flex';
     }
+
+    // 1. Rank Card File Validation (30 KB to 50 KB)
+    const rankFileInput = document.getElementById('rank_card_file');
+    const rankErrorMsg = document.getElementById('rankErrorMsg');
+    const rankSuccessMsg = document.getElementById('rankSuccessMsg');
+    let rankFileName = null;
+
+    rankFileInput.addEventListener('change', function(e) {
+        const file = e.target.files[0];
+        if (!file) {
+            rankFileName = null;
+            rankErrorMsg.style.display = 'none';
+            rankSuccessMsg.style.display = 'none';
+            return;
+        }
+        const minBytes = 30 * 1024; // 30 KB
+        const maxBytes = 50 * 1024; // 50 KB
+
+        if (file.size < minBytes || file.size > maxBytes) {
+            rankErrorMsg.style.display = 'block';
+            rankErrorMsg.innerText = `Invalid size (${(file.size / 1024).toFixed(1)} KB). File size must be between 30 KB and 50 KB.`;
+            rankSuccessMsg.style.display = 'none';
+            rankFileInput.value = '';
+            rankFileName = null;
+            return;
+        }
+
+        rankErrorMsg.style.display = 'none';
+        rankFileName = `${file.name} (${(file.size / 1024).toFixed(1)} KB)`;
+        rankSuccessMsg.style.display = 'block';
+        rankSuccessMsg.innerText = `✓ Selected: ${rankFileName}`;
+    });
+
+    // 2. CMM Document Validation (30 KB to 100 KB)
+    const cmmFileInput = document.getElementById('cmm_file');
+    const cmmErrorMsg = document.getElementById('cmmErrorMsg');
+    const cmmSuccessMsg = document.getElementById('cmmSuccessMsg');
+    let cmmFileName = null;
+
+    cmmFileInput.addEventListener('change', function(e) {
+        const file = e.target.files[0];
+        if (!file) {
+            cmmFileName = null;
+            cmmErrorMsg.style.display = 'none';
+            cmmSuccessMsg.style.display = 'none';
+            return;
+        }
+        const minBytes = 30 * 1024; // 30 KB
+        const maxBytes = 100 * 1024; // 100 KB
+
+        if (file.size < minBytes || file.size > maxBytes) {
+            cmmErrorMsg.style.display = 'block';
+            cmmErrorMsg.innerText = `Invalid size (${(file.size / 1024).toFixed(1)} KB). File size must be between 30 KB and 100 KB.`;
+            cmmSuccessMsg.style.display = 'none';
+            cmmFileInput.value = '';
+            cmmFileName = null;
+            return;
+        }
+
+        cmmErrorMsg.style.display = 'none';
+        cmmFileName = `${file.name} (${(file.size / 1024).toFixed(1)} KB)`;
+        cmmSuccessMsg.style.display = 'block';
+        cmmSuccessMsg.innerText = `✓ Selected: ${cmmFileName}`;
+    });
 
     // Modal elements
     const previewModal = document.getElementById('previewModal');
@@ -1175,15 +1325,16 @@
                     </tbody>
                 </table>
 
-                <h5 style="margin-top:14px; margin-bottom:6px; color:var(--primary); font-size:13.5px;">RANKS:</h5>
+                <h5 style="margin-top:14px; margin-bottom:6px; color:var(--primary); font-size:13.5px;">RANKS & RANK CARD:</h5>
                 <div class="preview-grid">
                     <div class="preview-item"><label>EAMCET</label><span>${formData.get('rank_eamcet') || 'N/A'}</span></div>
                     <div class="preview-item"><label>ECET</label><span>${formData.get('rank_ecet') || 'N/A'}</span></div>
                     <div class="preview-item"><label>JEE Mains</label><span>${formData.get('rank_jee') || 'N/A'}</span></div>
                     <div class="preview-item"><label>Other Ranks</label><span>${formData.get('rank_other') || 'N/A'}</span></div>
+                    <div class="preview-item full-width" style="margin-top:6px;"><label>Rank Card Uploaded</label><span>${rankFileName ? '✅ ' + rankFileName : '❌ Not Uploaded'}</span></div>
                 </div>
 
-                <h5 style="margin-top:14px; margin-bottom:6px; color:var(--primary); font-size:13.5px;">BACHELOR OF TECHNOLOGY:</h5>
+                <h5 style="margin-top:14px; margin-bottom:6px; color:var(--primary); font-size:13.5px;">BACHELOR OF TECHNOLOGY & CMM:</h5>
                 <div class="preview-grid-3">
                     <div class="preview-item"><label>Branch</label><span>${formData.get('btech_branch') || 'N/A'}</span></div>
                     <div class="preview-item"><label>CGPA</label><span>${formData.get('btech_cgpa') || 'N/A'}</span></div>
@@ -1191,6 +1342,7 @@
                     <div class="preview-item"><label>Backlogs Exist</label><span>${formData.get('backlogs_exist') || 'No'}</span></div>
                     <div class="preview-item"><label>No. of Backlogs</label><span>${formData.get('no_of_backlogs') || '0'}</span></div>
                     <div class="preview-item"><label>Education Gap Years</label><span>${formData.get('edu_gaps') || '0'}</span></div>
+                    <div class="preview-item full-width" style="margin-top:6px; grid-column: 1 / -1;"><label>CMM Document Uploaded</label><span>${cmmFileName ? '✅ ' + cmmFileName : '❌ Not Uploaded'}</span></div>
                 </div>
             </div>
 
