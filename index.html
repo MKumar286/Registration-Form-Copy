@@ -9,11 +9,12 @@
             --primary: #1e3a8a;
             --primary-dark: #0f172a;
             --accent: #2563eb;
-            --bg: #f8fafc;
+            --accent-hover: #1d4ed8;
+            --bg: #e2e8f0;
             --card-bg: #ffffff;
             --border: #cbd5e1;
-            --text: #1e293b;
-            --text-muted: #64748b;
+            --text: #0f172a;
+            --text-muted: #475569;
         }
 
         * {
@@ -24,55 +25,83 @@
         }
 
         body {
-            background-color: var(--bg);
+            background: linear-gradient(135deg, #f1f5f9 0%, #cbd5e1 100%);
             color: var(--text);
-            line-height: 1.5;
-            padding: 30px 15px;
+            line-height: 1.6;
+            padding: 40px 15px;
+            min-height: 100vh;
+            font-size: 15px;
         }
 
+        /* Responsive Form Container with Watermark */
         .form-container {
-            max-width: 900px;
+            max-width: 1050px;
             margin: 0 auto;
             background: var(--card-bg);
-            border-radius: 12px;
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
-            border: 1px solid var(--border);
+            border-radius: 16px;
+            box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.12), 0 10px 15px -6px rgba(0, 0, 0, 0.08);
+            border: 1px solid #cbd5e1;
             overflow: hidden;
+            position: relative;
         }
 
+        /* Watermark Background */
+        .form-container::before {
+            content: "MGIT";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-25deg);
+            font-size: 260px;
+            font-weight: 900;
+            color: #1e3a8a;
+            opacity: 0.035;
+            pointer-events: none;
+            user-select: none;
+            z-index: 0;
+            letter-spacing: 10px;
+        }
+
+        .form-content-wrapper {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Header Styling */
         .institute-header {
             text-align: center;
-            padding: 24px 20px;
+            padding: 28px 24px;
             background: #ffffff;
             border-bottom: 3px double var(--primary);
-            position: relative;
         }
 
         .institute-header h2 {
             color: var(--primary);
-            font-size: 22px;
+            font-size: 24px;
             font-weight: 800;
             letter-spacing: 0.5px;
             text-transform: uppercase;
         }
 
         .institute-header p {
-            font-size: 13px;
+            font-size: 14px;
             color: var(--text-muted);
-            margin-top: 4px;
+            margin-top: 6px;
         }
 
         .form-title-bar {
             background: var(--primary);
             color: white;
-            padding: 12px 20px;
+            padding: 16px 28px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
         }
 
         .form-title-bar h1 {
-            font-size: 18px;
+            font-size: 20px;
             font-weight: 700;
             letter-spacing: 0.5px;
         }
@@ -80,58 +109,62 @@
         .date-input {
             display: flex;
             align-items: center;
-            gap: 8px;
-            font-size: 14px;
+            gap: 10px;
+            font-size: 15px;
         }
 
         .date-input input {
-            padding: 4px 8px;
-            border-radius: 4px;
+            padding: 6px 12px;
+            border-radius: 6px;
             border: 1px solid var(--border);
+            font-size: 15px;
         }
 
+        /* Form Body Styling */
         .form-content {
-            padding: 30px;
+            padding: 36px;
         }
 
         .section-header {
             background-color: #f1f5f9;
             color: var(--primary);
-            padding: 8px 14px;
-            font-size: 15px;
+            padding: 10px 16px;
+            font-size: 16px;
             font-weight: 700;
-            border-left: 4px solid var(--primary);
-            margin-bottom: 20px;
-            margin-top: 30px;
+            border-left: 5px solid var(--primary);
+            margin-bottom: 24px;
+            margin-top: 36px;
             text-transform: uppercase;
+            border-radius: 0 6px 6px 0;
         }
 
         .section-header:first-of-type {
             margin-top: 0;
         }
 
+        /* Responsive Grid Layouts */
         .personal-details-wrapper {
             display: grid;
-            grid-template-columns: 1fr 160px;
-            gap: 20px;
+            grid-template-columns: 1fr 180px;
+            gap: 24px;
         }
 
         .grid-2 {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 16px;
+            gap: 20px;
         }
 
         .grid-3 {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 16px;
+            gap: 20px;
         }
 
         .grid-4 {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 12px;
+            gap: 16px;
         }
 
         .full-width {
@@ -141,11 +174,11 @@
         .form-group {
             display: flex;
             flex-direction: column;
-            gap: 5px;
+            gap: 6px;
         }
 
         label {
-            font-size: 13px;
+            font-size: 14px;
             font-weight: 600;
             color: var(--text);
         }
@@ -158,10 +191,10 @@
         select,
         textarea {
             width: 100%;
-            padding: 8px 12px;
-            font-size: 13.5px;
-            border: 1px solid var(--border);
-            border-radius: 6px;
+            padding: 10px 14px;
+            font-size: 15px;
+            border: 1.5px solid var(--border);
+            border-radius: 8px;
             background-color: #fff;
             color: var(--text);
             transition: all 0.2s ease;
@@ -170,22 +203,28 @@
         input:focus, select:focus, textarea:focus {
             outline: none;
             border-color: var(--accent);
-            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+            box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.15);
         }
 
+        /* Photo Upload Box */
         .photo-upload-box {
             border: 2px dashed var(--border);
-            border-radius: 8px;
-            height: 190px;
+            border-radius: 10px;
+            height: 210px;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 10px;
+            padding: 12px;
             background-color: #fafafa;
             position: relative;
             cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .photo-upload-box:hover {
+            background-color: #f1f5f9;
         }
 
         .photo-upload-box input[type="file"] {
@@ -199,129 +238,341 @@
         }
 
         .photo-upload-box p {
-            font-size: 12px;
+            font-size: 13px;
             color: var(--text-muted);
-            margin-top: 6px;
+            margin-top: 8px;
+        }
+
+        /* Responsive Table Container */
+        .table-responsive {
+            width: 100%;
+            overflow-x: auto;
+            margin-top: 12px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
         }
 
         table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 10px;
-            font-size: 13px;
+            font-size: 14.5px;
+            background: white;
         }
 
         th, td {
             border: 1px solid var(--border);
-            padding: 8px 10px;
+            padding: 10px 14px;
             text-align: left;
         }
 
         th {
             background-color: #f1f5f9;
             color: var(--primary-dark);
-            font-weight: 600;
+            font-weight: 700;
         }
 
         table input {
             border: none;
-            padding: 4px;
+            padding: 6px;
             background: transparent;
+            font-size: 14.5px;
+            width: 100%;
         }
 
         table input:focus {
             box-shadow: none;
             background: #eff6ff;
+            outline: none;
         }
 
+        /* Guidelines & Boxes */
         .info-box {
             background: #eff6ff;
-            border-left: 4px solid var(--accent);
-            padding: 14px;
-            border-radius: 4px;
-            font-size: 13px;
-            margin-bottom: 15px;
+            border-left: 5px solid var(--accent);
+            padding: 16px 18px;
+            border-radius: 6px;
+            font-size: 14.5px;
+            margin-bottom: 20px;
         }
 
         .guidelines-list {
-            padding-left: 20px;
-            font-size: 13px;
+            list-style-type: none;
+            padding-left: 0;
+            font-size: 14.5px;
             color: #334155;
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 12px;
             line-height: 1.6;
         }
 
         .undertaking-box {
             border: 1px solid var(--border);
             background: #f8fafc;
-            padding: 20px;
-            border-radius: 8px;
-            margin-top: 20px;
+            padding: 24px;
+            border-radius: 10px;
+            margin-top: 24px;
         }
 
         .undertaking-box h3 {
-            font-size: 15px;
+            font-size: 16px;
             color: var(--primary);
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             text-align: center;
+            text-transform: uppercase;
         }
 
         .undertaking-list {
             list-style-type: lower-alpha;
-            padding-left: 20px;
-            font-size: 13px;
+            padding-left: 24px;
+            font-size: 14px;
             display: flex;
             flex-direction: column;
-            gap: 8px;
+            gap: 10px;
         }
 
         .sig-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-            margin-top: 25px;
-            padding-top: 15px;
+            gap: 24px;
+            margin-top: 28px;
+            padding-top: 20px;
             border-top: 1px dashed var(--border);
         }
 
-        .submit-btn {
-            background: var(--primary);
-            color: white;
-            border: none;
-            padding: 12px 24px;
-            font-size: 16px;
-            font-weight: 600;
-            border-radius: 6px;
-            cursor: pointer;
-            width: 100%;
-            margin-top: 30px;
-            transition: background 0.2s;
+        /* Action Buttons Container */
+        .button-group {
+            display: flex;
+            gap: 16px;
+            margin-top: 32px;
+            flex-wrap: wrap;
         }
 
-        .submit-btn:hover {
-            background: #1d4ed8;
+        .btn {
+            padding: 14px 28px;
+            font-size: 16px;
+            font-weight: 700;
+            border-radius: 8px;
+            cursor: pointer;
+            border: none;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .btn-preview {
+            background-color: #475569;
+            color: white;
+        }
+
+        .btn-preview:hover {
+            background-color: #334155;
+        }
+
+        .btn-submit {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .btn-submit:hover {
+            background-color: #1d4ed8;
+        }
+
+        .btn-download {
+            background-color: #059669;
+            color: white;
+            display: none;
+        }
+
+        .btn-download:hover {
+            background-color: #047857;
         }
 
         #status-message {
-            margin-top: 15px;
-            padding: 12px;
-            border-radius: 6px;
-            font-size: 14px;
+            margin-top: 20px;
+            padding: 16px;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 600;
             text-align: center;
             display: none;
         }
 
-        @media (max-width: 768px) {
+        /* Modal Popup for Form Preview */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(15, 23, 42, 0.65);
+            backdrop-filter: blur(4px);
+            z-index: 9999;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .modal-card {
+            background: white;
+            border-radius: 16px;
+            max-width: 900px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .modal-header {
+            background: var(--primary);
+            color: white;
+            padding: 18px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .modal-header h3 {
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .modal-close {
+            background: transparent;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            line-height: 1;
+        }
+
+        .modal-body {
+            padding: 28px;
+            font-size: 14.5px;
+        }
+
+        .preview-section {
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 16px;
+        }
+
+        .preview-section h4 {
+            color: var(--primary);
+            font-size: 16px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .preview-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .preview-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .preview-item label {
+            font-size: 12.5px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+        }
+
+        .preview-item span {
+            font-size: 14.5px;
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        .modal-footer {
+            padding: 18px 24px;
+            background: #f8fafc;
+            border-top: 1px solid var(--border);
+            display: flex;
+            justify-content: flex-end;
+            gap: 12px;
+            position: sticky;
+            bottom: 0;
+        }
+
+        /* Mobile Screen Media Queries */
+        @media (max-width: 850px) {
+            body {
+                padding: 15px 8px;
+            }
+
+            .form-container {
+                border-radius: 10px;
+            }
+
+            .form-content {
+                padding: 20px 16px;
+            }
+
             .personal-details-wrapper {
                 grid-template-columns: 1fr;
             }
-            .grid-2, .grid-3, .grid-4 {
+
+            .photo-upload-box {
+                height: 160px;
+            }
+
+            .grid-2, .grid-3, .grid-4, .sig-grid, .preview-grid {
                 grid-template-columns: 1fr;
             }
-            .sig-grid {
-                grid-template-columns: 1fr;
+
+            .institute-header h2 {
+                font-size: 18px;
+            }
+
+            .form-title-bar h1 {
+                font-size: 16px;
+            }
+
+            .button-group {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+
+        /* Print CSS for Download functionality */
+        @media print {
+            body {
+                background: white !important;
+                padding: 0 !important;
+            }
+
+            .form-container {
+                box-shadow: none !important;
+                border: none !important;
+                max-width: 100% !important;
+            }
+
+            .button-group, #status-message, .modal-overlay {
+                display: none !important;
+            }
+
+            input, select, textarea {
+                border: none !important;
+                border-bottom: 1px solid #000 !important;
+                border-radius: 0 !important;
+                background: transparent !important;
             }
         }
     </style>
@@ -329,312 +580,411 @@
 <body>
 
 <div class="form-container">
-    <div class="institute-header">
-        <h2>MAHATMA GANDHI INSTITUTE OF TECHNOLOGY (Autonomous)</h2>
-        <p>Kokapet (Village), Gandipet, Hyderabad, Telangana - 500075 | www.mgit.ac.in</p>
-    </div>
-
-    <form id="placementForm">
-        <div class="form-title-bar">
-            <h1>PLACEMENT REGISTRATION FORM</h1>
-            <div class="date-input">
-                <label for="reg_date" style="color: white;">Date:</label>
-                <input type="date" id="reg_date" name="reg_date" required>
-            </div>
+    <div class="form-content-wrapper">
+        <div class="institute-header">
+            <h2>MAHATMA GANDHI INSTITUTE OF TECHNOLOGY (Autonomous)</h2>
+            <p>Kokapet (Village), Gandipet, Hyderabad, Telangana - 500075 | www.mgit.ac.in</p>
         </div>
 
-        <div class="form-content">
-            <!-- A. Personal Details -->
-            <div class="section-header">A. Personal Details</div>
-            
-            <div class="personal-details-wrapper">
-                <div class="grid-2">
-                    <div class="form-group full-width">
-                        <label for="student_name">1. Name (in Block Letters):</label>
-                        <input type="text" id="student_name" name="student_name" placeholder="FULL NAME" required style="text-transform: uppercase;">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="roll_no">2. Roll Number:</label>
-                        <input type="text" id="roll_no" name="roll_no" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="gender">Gender:</label>
-                        <select id="gender" name="gender" required>
-                            <option value="">Select Gender</option>
-                            <option value="Male">Male</option>
-                            <option value="Female">Female</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="mobile">3. Mobile Number:</label>
-                        <input type="tel" id="mobile" name="mobile" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="dob">DoB (DD/MM/YYYY):</label>
-                        <input type="date" id="dob" name="dob" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="aadhar">4. Aadhar Number:</label>
-                        <input type="text" id="aadhar" name="aadhar" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="pan">PAN Number:</label>
-                        <input type="text" id="pan" name="pan" required style="text-transform: uppercase;">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="mgit_email">5. MGIT-Domain Email:</label>
-                        <input type="email" id="mgit_email" name="mgit_email" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="personal_email">Personal Email:</label>
-                        <input type="email" id="personal_email" name="personal_email" required>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label>Passport Photo</label>
-                    <div class="photo-upload-box">
-                        <span>📷</span>
-                        <p>Affix recent color photo</p>
-                        <input type="file" name="passport_photo" accept="image/*">
-                    </div>
+        <form id="placementForm">
+            <div class="form-title-bar">
+                <h1>PLACEMENT REGISTRATION FORM</h1>
+                <div class="date-input">
+                    <label for="reg_date" style="color: white;">Date:</label>
+                    <input type="date" id="reg_date" name="reg_date" required>
                 </div>
             </div>
 
-            <!-- Address Section -->
-            <div style="margin-top: 15px;">
-                <label style="font-weight: bold; margin-bottom: 8px; display: block;">6. Current Address:</label>
-                <div class="grid-3">
-                    <div class="form-group"><label>H. No.:</label><input type="text" name="curr_hno"></div>
-                    <div class="form-group"><label>Street:</label><input type="text" name="curr_street"></div>
-                    <div class="form-group"><label>City/Village:</label><input type="text" name="curr_city"></div>
-                    <div class="form-group"><label>Mandal:</label><input type="text" name="curr_mandal"></div>
-                    <div class="form-group"><label>Dist.:</label><input type="text" name="curr_dist"></div>
-                    <div class="form-group"><label>State:</label><input type="text" name="curr_state"></div>
-                    <div class="form-group"><label>Pin Code:</label><input type="text" name="curr_pincode"></div>
-                </div>
-            </div>
+            <div class="form-content">
+                <!-- A. Personal Details -->
+                <div class="section-header">A. Personal Details</div>
+                
+                <div class="personal-details-wrapper">
+                    <div class="grid-2">
+                        <div class="form-group full-width">
+                            <label for="student_name">1. Name (in Block Letters):</label>
+                            <input type="text" id="student_name" name="student_name" placeholder="FULL NAME" required style="text-transform: uppercase;">
+                        </div>
 
-            <div style="margin-top: 15px;">
-                <label style="font-weight: bold; margin-bottom: 8px; display: block;">7. Permanent Address:</label>
-                <div class="grid-3">
-                    <div class="form-group"><label>H. No.:</label><input type="text" name="perm_hno"></div>
-                    <div class="form-group"><label>Street:</label><input type="text" name="perm_street"></div>
-                    <div class="form-group"><label>City/Village:</label><input type="text" name="perm_city"></div>
-                    <div class="form-group"><label>Mandal:</label><input type="text" name="perm_mandal"></div>
-                    <div class="form-group"><label>Dist.:</label><input type="text" name="perm_dist"></div>
-                    <div class="form-group"><label>State:</label><input type="text" name="perm_state"></div>
-                    <div class="form-group"><label>Pin Code:</label><input type="text" name="perm_pincode"></div>
-                </div>
-            </div>
+                        <div class="form-group">
+                            <label for="roll_no">2. Roll Number:</label>
+                            <input type="text" id="roll_no" name="roll_no" required>
+                        </div>
 
-            <!-- B. Parent's Details -->
-            <div class="section-header">B. Parent's Details</div>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Relation</th>
-                        <th>Name</th>
-                        <th>Profession</th>
-                        <th>Mobile Number</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>Father</strong></td>
-                        <td><input type="text" name="father_name" required></td>
-                        <td><input type="text" name="father_prof"></td>
-                        <td><input type="tel" name="father_mobile" required></td>
-                    </tr>
-                    <tr>
-                        <td><strong>Mother</strong></td>
-                        <td><input type="text" name="mother_name" required></td>
-                        <td><input type="text" name="mother_prof"></td>
-                        <td><input type="tel" name="mother_mobile"></td>
-                    </tr>
-                </tbody>
-            </table>
+                        <div class="form-group">
+                            <label for="gender">Gender:</label>
+                            <select id="gender" name="gender" required>
+                                <option value="">Select Gender</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                            </select>
+                        </div>
 
-            <!-- C. Education Details -->
-            <div class="section-header">C. Education Details</div>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Qualification</th>
-                        <th>Year of Passing</th>
-                        <th>Marks Secured / Total</th>
-                        <th>% Scored</th>
-                        <th>Group / Specialization</th>
-                        <th>Board Name</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>SSC</strong></td>
-                        <td><input type="number" name="ssc_year"></td>
-                        <td><input type="text" name="ssc_marks"></td>
-                        <td><input type="text" name="ssc_pct"></td>
-                        <td><input type="text" name="ssc_group"></td>
-                        <td><input type="text" name="ssc_board"></td>
-                    </tr>
-                    <tr>
-                        <td><strong>Inter / Diploma</strong></td>
-                        <td><input type="number" name="inter_year"></td>
-                        <td><input type="text" name="inter_marks"></td>
-                        <td><input type="text" name="inter_pct"></td>
-                        <td><input type="text" name="inter_group"></td>
-                        <td><input type="text" name="inter_board"></td>
-                    </tr>
-                </tbody>
-            </table>
+                        <div class="form-group">
+                            <label for="mobile">3. Mobile Number:</label>
+                            <input type="tel" id="mobile" name="mobile" required>
+                        </div>
 
-            <div style="margin-top: 15px;">
-                <label style="font-weight: 700;">RANK (wherever applicable):</label>
-                <div class="grid-4" style="margin-top: 8px;">
-                    <div class="form-group"><label>EAMCET:</label><input type="text" name="rank_eamcet"></div>
-                    <div class="form-group"><label>ECET:</label><input type="text" name="rank_ecet"></div>
-                    <div class="form-group"><label>JEE Mains:</label><input type="text" name="rank_jee"></div>
-                    <div class="form-group"><label>Other(s):</label><input type="text" name="rank_other"></div>
-                </div>
-            </div>
+                        <div class="form-group">
+                            <label for="dob">DoB (DD/MM/YYYY):</label>
+                            <input type="date" id="dob" name="dob" required>
+                        </div>
 
-            <div style="margin-top: 15px;">
-                <label style="font-weight: 700;">Bachelor of Technology:</label>
-                <div class="grid-3" style="margin-top: 8px;">
-                    <div class="form-group"><label>Branch:</label><input type="text" name="btech_branch" required></div>
-                    <div class="form-group"><label>CGPA (Till Date):</label><input type="text" name="btech_cgpa" required></div>
-                    <div class="form-group"><label>% = (CGPA - 0.50)*10:</label><input type="text" name="btech_pct"></div>
-                    <div class="form-group">
-                        <label>Backlogs (Yes/No):</label>
-                        <select name="backlogs_exist">
-                            <option value="No">No</option>
-                            <option value="Yes">Yes</option>
-                        </select>
+                        <div class="form-group">
+                            <label for="aadhar">4. Aadhar Number:</label>
+                            <input type="text" id="aadhar" name="aadhar" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="pan">PAN Number:</label>
+                            <input type="text" id="pan" name="pan" required style="text-transform: uppercase;">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="mgit_email">5. MGIT-Domain Email:</label>
+                            <input type="email" id="mgit_email" name="mgit_email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="personal_email">Personal Email:</label>
+                            <input type="email" id="personal_email" name="personal_email" required>
+                        </div>
                     </div>
-                    <div class="form-group"><label>No. of Backlogs:</label><input type="number" name="no_of_backlogs" value="0"></div>
-                    <div class="form-group"><label>Education Gap Years (SSC to B.Tech):</label><input type="number" name="edu_gaps" value="0"></div>
+
+                    <div class="form-group">
+                        <label>Passport Photo</label>
+                        <div class="photo-upload-box">
+                            <span style="font-size: 28px;">📷</span>
+                            <p>Affix recent color photo</p>
+                            <input type="file" name="passport_photo" accept="image/*">
+                        </div>
+                    </div>
                 </div>
-            </div>
 
-            <!-- 1. Preferences -->
-            <div class="section-header">1. Career Preferences</div>
-            <div class="info-box">
-                <p><strong>Past Visiting Companies:</strong></p>
-                <p><strong>Service:</strong> TCS, Infosys, Cognizant, Wipro, Accenture, Wells Fargo, ADP, Virtusa, HCL, LTIMindtree, EPAM, etc.</p>
-                <p><strong>Product:</strong> ServiceNow, IBM, NTT Data, DBS, Deloitte, Verisk, Modak Analytics, Nalsoft, etc.</p>
-                <p><strong>Core:</strong> JSW, Jindal Saw, Hyundai Mobis, BHEL GE, Cyient, Amara Raja, Medha Servo Drives, Siemens, Hitachi, etc.</p>
-            </div>
-
-            <label style="font-weight: bold; margin-top: 15px; display: block;">1.1 Select Option (Choose ONLY ONE out of 7):</label>
-            <table>
-                <thead>
-                    <tr>
-                        <th style="width: 50px;">S.No</th>
-                        <th>Option</th>
-                        <th style="width: 100px; text-align: center;">Select</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr><td>1</td><td>Job - Campus Placement</td><td style="text-align: center;"><input type="radio" name="career_option" value="Job" required></td></tr>
-                    <tr><td>2</td><td>M. Tech (India)</td><td style="text-align: center;"><input type="radio" name="career_option" value="MTech"></td></tr>
-                    <tr><td>3</td><td>MBA (India)</td><td style="text-align: center;"><input type="radio" name="career_option" value="MBA_IN"></td></tr>
-                    <tr><td>4</td><td>MS (Abroad)</td><td style="text-align: center;"><input type="radio" name="career_option" value="MS_Abroad"></td></tr>
-                    <tr><td>5</td><td>MBA (Abroad)</td><td style="text-align: center;"><input type="radio" name="career_option" value="MBA_Abroad"></td></tr>
-                    <tr><td>6</td><td>Business</td><td style="text-align: center;"><input type="radio" name="career_option" value="Business"></td></tr>
-                    <tr><td>7</td><td>Other (Specify)</td><td style="text-align: center;"><input type="radio" name="career_option" value="Other"></td></tr>
-                </tbody>
-            </table>
-
-            <label style="font-weight: bold; margin-top: 20px; display: block;">If "Job", specify priority (1st & 2nd):</label>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Job Option</th>
-                        <th>1st Priority</th>
-                        <th>2nd Priority</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr><td>a. IT Services</td><td><input type="radio" name="prio_1" value="IT Services"></td><td><input type="radio" name="prio_2" value="IT Services"></td></tr>
-                    <tr><td>b. IT Product</td><td><input type="radio" name="prio_1" value="IT Product"></td><td><input type="radio" name="prio_2" value="IT Product"></td></tr>
-                    <tr><td>c. Core Job</td><td><input type="radio" name="prio_1" value="Core Job"></td><td><input type="radio" name="prio_2" value="Core Job"></td></tr>
-                    <tr><td>d. Other (Specify)</td><td><input type="radio" name="prio_1" value="Other"></td><td><input type="radio" name="prio_2" value="Other"></td></tr>
-                </tbody>
-            </table>
-
-            <!-- 2. PLACEMENT GUIDELINES (COMPLETE 2.1 - 2.16) -->
-            <!-- 2. PLACEMENT GUIDELINES -->
-<div class="section-header">2. Placement Guidelines</div>
-<ul class="guidelines-list" style="list-style-type: none; padding-left: 0;">
-    <li><strong>2.1.</strong> The candidates aiming at "Higher Education (M.S / M.Tech / MBA) or Business" should not register for Training & Placement activities.</li>
-    <li><strong>2.2.</strong> Students must adhere to a formal dress code for all placement related activities.</li>
-    <li><strong>2.3.</strong> Students are required to submit a photo copy of their transcripts to Training & Placement Cell (TPC) as soon as they receive from AES. It is the responsibility of the students to update their academic records accordingly.</li>
-    <li><strong>2.4.</strong> Student who applied for placement drive and failed to attend the same will be barred from participating in the three consecutive future placement drives.</li>
-    <li><strong>2.5.</strong> A student who applies and gets shortlisted is bound to go through the entire selection process unless rejected midway by the company. Any student who withdraws deliberately in the midst of a selection process will be disallowed to attend the three consecutive placement drives.</li>
-    <li><strong>2.6.</strong> Students involved in any indiscipline activities during their course of study or in wrong practices during placement assessments will be barred from campus placement drives.</li>
-    <li><strong>2.7.</strong> Students shall not decline the first confirmed offer letter after willingly participating in the specific company's placement drive. Furthermore, students engaged in an internship with the company have to honor and join the same company.</li>
-    <li><strong>2.8.</strong> Students with a confirmed offer letter can apply for the next placement drive if the new offer's CTC is more than 1.5 times their current offer's CTC.</li>
-    <li><strong>2.9.</strong> Student without the confirmed PPO through summer internships shall be eligible for further placement drives. Later if PPO is confirmed, student has an option to choose either a confirmed PPO or offer received from the subsequent placement drive.</li>
-    <li><strong>2.10.</strong> Students from Core Engineering Branches are eligible for one core and one software placement drives. Such students shall choose one of the above offers and inform their offer acceptance decision to TPO immediately.</li>
-    <li><strong>2.11.</strong> Student who is placed shall abide by the company hiring policy like service agreement, mandated internship, joining date, work location etc.</li>
-    <li><strong>2.12.</strong> Students should refrain from communicating directly with company officials either in person, via email or a phone call under any circumstances. Communication between the company and a student must happen via the Placement Office only. Any unruly behavior compromising the reputation of the Institute shall deem the student ineligible for future placements.</li>
-    <li><strong>2.13.</strong> Normally, students will receive offer letters directly. In such cases, it is mandatory to inform the placement office and submit a copy of the offer letter.</li>
-    <li><strong>2.14.</strong> Institute is not responsible for any deferment or withdrawal of an offer letter by the company.</li>
-    <li><strong>2.15.</strong> Any violation of the above guidelines will result in disciplinary action & penalty.</li>
-    <li><strong>2.16.</strong> The Placement Office reserves the right to override any of the above rules in special circumstances and use their discretion to act on matters not covered by the above guidelines/rules.</li>
-</ul>
-
-            <div class="undertaking-box">
-                <h3>UNDERTAKING BY STUDENT</h3>
-                <p style="font-size: 13px; margin-bottom: 12px; color: #475569;">
-                    I have read and understood each point mentioned in the placement form and submit this undertaking:
-                </p>
-                <ul class="undertaking-list">
-                    <li>I am aware that I must maintain the minimum aggregate academic percentage of 60% (6.5 CGPA) to fit into eligibility (with NO backlogs).</li>
-                    <li>If selected, I will join the company and abide by the rules and regulations stipulated by the company. I will join the company that offered me the job, I also understand that I shall not be permitted to reject the offer at any stage, as I was briefed about the company's role, responsibilities, service agreement, job location, salary package, and other benefits well before the placement drive and during the pre-placement talk.</li>
-                    <li>Strictly follow the set of instructions by the company selected (Internship/online learning/assessment etc.) and make use of all Training sessions and Assessments by the Employer organization.</li>
-                    <li>In case of holding one offer, I will not attend for Campus (On/OFF) drive without prior approval from the concerned authority of the Institute (TPC).</li>
-                </ul>
+                <!-- Address Section -->
+                <div style="margin-top: 20px;">
+                    <label style="font-weight: bold; margin-bottom: 8px; display: block;">6. Current Address:</label>
+                    <div class="grid-3">
+                        <div class="form-group"><label>H. No.:</label><input type="text" name="curr_hno"></div>
+                        <div class="form-group"><label>Street:</label><input type="text" name="curr_street"></div>
+                        <div class="form-group"><label>City/Village:</label><input type="text" name="curr_city"></div>
+                        <div class="form-group"><label>Mandal:</label><input type="text" name="curr_mandal"></div>
+                        <div class="form-group"><label>Dist.:</label><input type="text" name="curr_dist"></div>
+                        <div class="form-group"><label>State:</label><input type="text" name="curr_state"></div>
+                        <div class="form-group"><label>Pin Code:</label><input type="text" name="curr_pincode"></div>
+                    </div>
+                </div>
 
                 <div style="margin-top: 20px;">
-                    <label class="checkbox-item" style="display: flex; gap: 10px; align-items: center; cursor: pointer;">
-                        <input type="checkbox" name="undertaking_agree" required style="width: 18px; height: 18px;">
-                        <strong>I hereby declare that all the information provided by me is correct, and I agree to strictly uphold and abide by all T&P policies and guidelines mentioned above.</strong>
-                    </label>
+                    <label style="font-weight: bold; margin-bottom: 8px; display: block;">7. Permanent Address:</label>
+                    <div class="grid-3">
+                        <div class="form-group"><label>H. No.:</label><input type="text" name="perm_hno"></div>
+                        <div class="form-group"><label>Street:</label><input type="text" name="perm_street"></div>
+                        <div class="form-group"><label>City/Village:</label><input type="text" name="perm_city"></div>
+                        <div class="form-group"><label>Mandal:</label><input type="text" name="perm_mandal"></div>
+                        <div class="form-group"><label>Dist.:</label><input type="text" name="perm_dist"></div>
+                        <div class="form-group"><label>State:</label><input type="text" name="perm_state"></div>
+                        <div class="form-group"><label>Pin Code:</label><input type="text" name="perm_pincode"></div>
+                    </div>
                 </div>
 
-                <div class="sig-grid">
-                    <div class="form-group">
-                        <label>Student Signature / Confirmation:</label>
-                        <input type="text" name="student_sig" placeholder="Type Full Name" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Parent Signature / Confirmation:</label>
-                        <input type="text" name="parent_sig" placeholder="Type Parent Name" required>
+                <!-- B. Parent's Details -->
+                <div class="section-header">B. Parent's Details</div>
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Relation</th>
+                                <th>Name</th>
+                                <th>Profession</th>
+                                <th>Mobile Number</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Father</strong></td>
+                                <td><input type="text" name="father_name" required></td>
+                                <td><input type="text" name="father_prof"></td>
+                                <td><input type="tel" name="father_mobile" required></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Mother</strong></td>
+                                <td><input type="text" name="mother_name" required></td>
+                                <td><input type="text" name="mother_prof"></td>
+                                <td><input type="tel" name="mother_mobile"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- C. Education Details -->
+                <div class="section-header">C. Education Details</div>
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Qualification</th>
+                                <th>Year of Passing</th>
+                                <th>Marks Secured / Total</th>
+                                <th>% Scored</th>
+                                <th>Group / Specialization</th>
+                                <th>Board Name</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>SSC</strong></td>
+                                <td><input type="number" name="ssc_year"></td>
+                                <td><input type="text" name="ssc_marks"></td>
+                                <td><input type="text" name="ssc_pct"></td>
+                                <td><input type="text" name="ssc_group"></td>
+                                <td><input type="text" name="ssc_board"></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Inter / Diploma</strong></td>
+                                <td><input type="number" name="inter_year"></td>
+                                <td><input type="text" name="inter_marks"></td>
+                                <td><input type="text" name="inter_pct"></td>
+                                <td><input type="text" name="inter_group"></td>
+                                <td><input type="text" name="inter_board"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div style="margin-top: 20px;">
+                    <label style="font-weight: 700;">RANK (wherever applicable):</label>
+                    <div class="grid-4" style="margin-top: 10px;">
+                        <div class="form-group"><label>EAMCET:</label><input type="text" name="rank_eamcet"></div>
+                        <div class="form-group"><label>ECET:</label><input type="text" name="rank_ecet"></div>
+                        <div class="form-group"><label>JEE Mains:</label><input type="text" name="rank_jee"></div>
+                        <div class="form-group"><label>Other(s):</label><input type="text" name="rank_other"></div>
                     </div>
                 </div>
+
+                <div style="margin-top: 20px;">
+                    <label style="font-weight: 700;">Bachelor of Technology:</label>
+                    <div class="grid-3" style="margin-top: 10px;">
+                        <div class="form-group"><label>Branch:</label><input type="text" name="btech_branch" required></div>
+                        <div class="form-group"><label>CGPA (Till Date):</label><input type="text" name="btech_cgpa" required></div>
+                        <div class="form-group"><label>% = (CGPA - 0.50)*10:</label><input type="text" name="btech_pct"></div>
+                        <div class="form-group">
+                            <label>Backlogs (Yes/No):</label>
+                            <select name="backlogs_exist">
+                                <option value="No">No</option>
+                                <option value="Yes">Yes</option>
+                            </select>
+                        </div>
+                        <div class="form-group"><label>No. of Backlogs:</label><input type="number" name="no_of_backlogs" value="0"></div>
+                        <div class="form-group"><label>Education Gap Years (SSC to B.Tech):</label><input type="number" name="edu_gaps" value="0"></div>
+                    </div>
+                </div>
+
+                <!-- 1. Preferences -->
+                <div class="section-header">1. Career Preferences</div>
+                <div class="info-box">
+                    <p><strong>Past Visiting Companies:</strong></p>
+                    <p><strong>Service:</strong> TCS, Infosys, Cognizant, Wipro, Accenture, Wells Fargo, ADP, Virtusa, HCL, LTIMindtree, EPAM, etc.</p>
+                    <p><strong>Product:</strong> ServiceNow, IBM, NTT Data, DBS, Deloitte, Verisk, Modak Analytics, Nalsoft, etc.</p>
+                    <p><strong>Core:</strong> JSW, Jindal Saw, Hyundai Mobis, BHEL GE, Cyient, Amara Raja, Medha Servo Drives, Siemens, Hitachi, etc.</p>
+                </div>
+
+                <label style="font-weight: bold; margin-top: 15px; display: block;">1.1 Select Option (Choose ONLY ONE out of 7):</label>
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="width: 50px;">S.No</th>
+                                <th>Option</th>
+                                <th style="width: 100px; text-align: center;">Select</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>1</td><td>Job - Campus Placement</td><td style="text-align: center;"><input type="radio" name="career_option" value="Job" required style="width:18px; height:18px;"></td></tr>
+                            <tr><td>2</td><td>M. Tech (India)</td><td style="text-align: center;"><input type="radio" name="career_option" value="MTech" style="width:18px; height:18px;"></td></tr>
+                            <tr><td>3</td><td>MBA (India)</td><td style="text-align: center;"><input type="radio" name="career_option" value="MBA_IN" style="width:18px; height:18px;"></td></tr>
+                            <tr><td>4</td><td>MS (Abroad)</td><td style="text-align: center;"><input type="radio" name="career_option" value="MS_Abroad" style="width:18px; height:18px;"></td></tr>
+                            <tr><td>5</td><td>MBA (Abroad)</td><td style="text-align: center;"><input type="radio" name="career_option" value="MBA_Abroad" style="width:18px; height:18px;"></td></tr>
+                            <tr><td>6</td><td>Business</td><td style="text-align: center;"><input type="radio" name="career_option" value="Business" style="width:18px; height:18px;"></td></tr>
+                            <tr><td>7</td><td>Other (Specify)</td><td style="text-align: center;"><input type="radio" name="career_option" value="Other" style="width:18px; height:18px;"></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <label style="font-weight: bold; margin-top: 20px; display: block;">If "Job", specify priority (1st & 2nd):</label>
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Job Option</th>
+                                <th>1st Priority</th>
+                                <th>2nd Priority</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>a. IT Services</td><td><input type="radio" name="prio_1" value="IT Services" style="width:18px; height:18px;"></td><td><input type="radio" name="prio_2" value="IT Services" style="width:18px; height:18px;"></td></tr>
+                            <tr><td>b. IT Product</td><td><input type="radio" name="prio_1" value="IT Product" style="width:18px; height:18px;"></td><td><input type="radio" name="prio_2" value="IT Product" style="width:18px; height:18px;"></td></tr>
+                            <tr><td>c. Core Job</td><td><input type="radio" name="prio_1" value="Core Job" style="width:18px; height:18px;"></td><td><input type="radio" name="prio_2" value="Core Job" style="width:18px; height:18px;"></td></tr>
+                            <tr><td>d. Other (Specify)</td><td><input type="radio" name="prio_1" value="Other" style="width:18px; height:18px;"></td><td><input type="radio" name="prio_2" value="Other" style="width:18px; height:18px;"></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- 2. PLACEMENT GUIDELINES -->
+                <div class="section-header">2. Placement Guidelines</div>
+                <ul class="guidelines-list">
+                    <li><strong>2.1.</strong> The candidates aiming at "Higher Education (M.S / M.Tech / MBA) or Business" should not register for Training & Placement activities.</li>
+                    <li><strong>2.2.</strong> Students must adhere to a formal dress code for all placement related activities.</li>
+                    <li><strong>2.3.</strong> Students are required to submit a photo copy of their transcripts to Training & Placement Cell (TPC) as soon as they receive from AES. It is the responsibility of the students to update their academic records accordingly.</li>
+                    <li><strong>2.4.</strong> Student who applied for placement drive and failed to attend the same will be barred from participating in the three consecutive future placement drives.</li>
+                    <li><strong>2.5.</strong> A student who applies and gets shortlisted is bound to go through the entire selection process unless rejected midway by the company. Any student who withdraws deliberately in the midst of a selection process will be disallowed to attend the three consecutive placement drives.</li>
+                    <li><strong>2.6.</strong> Students involved in any indiscipline activities during their course of study or in wrong practices during placement assessments will be barred from campus placement drives.</li>
+                    <li><strong>2.7.</strong> Students shall not decline the first confirmed offer letter after willingly participating in the specific company's placement drive. Furthermore, students engaged in an internship with the company have to honor and join the same company.</li>
+                    <li><strong>2.8.</strong> Students with a confirmed offer letter can apply for the next placement drive if the new offer's CTC is more than 1.5 times their current offer's CTC.</li>
+                    <li><strong>2.9.</strong> Student without the confirmed PPO through summer internships shall be eligible for further placement drives. Later if PPO is confirmed, student has an option to choose either a confirmed PPO or offer received from the subsequent placement drive.</li>
+                    <li><strong>2.10.</strong> Students from Core Engineering Branches are eligible for one core and one software placement drives. Such students shall choose one of the above offers and inform their offer acceptance decision to TPO immediately.</li>
+                    <li><strong>2.11.</strong> Student who is placed shall abide by the company hiring policy like service agreement, mandated internship, joining date, work location etc.</li>
+                    <li><strong>2.12.</strong> Students should refrain from communicating directly with company officials either in person, via email or a phone call under any circumstances. Communication between the company and a student must happen via the Placement Office only. Any unruly behavior compromising the reputation of the Institute shall deem the student ineligible for future placements.</li>
+                    <li><strong>2.13.</strong> Normally, students will receive offer letters directly. In such cases, it is mandatory to inform the placement office and submit a copy of the offer letter.</li>
+                    <li><strong>2.14.</strong> Institute is not responsible for any deferment or withdrawal of an offer letter by the company.</li>
+                    <li><strong>2.15.</strong> Any violation of the above guidelines will result in disciplinary action & penalty.</li>
+                    <li><strong>2.16.</strong> The Placement Office reserves the right to override any of the above rules in special circumstances and use their discretion to act on matters not covered by the above guidelines/rules.</li>
+                </ul>
+
+                <div class="undertaking-box">
+                    <h3>UNDERTAKING BY STUDENT</h3>
+                    <p style="font-size: 14px; margin-bottom: 12px; color: #475569;">
+                        I have read and understood each point mentioned in the placement form and submit this undertaking:
+                    </p>
+                    <ul class="undertaking-list">
+                        <li>I am aware that I must maintain the minimum aggregate academic percentage of 60% (6.5 CGPA) to fit into eligibility (with NO backlogs).</li>
+                        <li>If selected, I will join the company and abide by the rules and regulations stipulated by the company. I will join the company that offered me the job, I also understand that I shall not be permitted to reject the offer at any stage, as I was briefed about the company's role, responsibilities, service agreement, job location, salary package, and other benefits well before the placement drive and during the pre-placement talk.</li>
+                        <li>Strictly follow the set of instructions by the company selected (Internship/online learning/assessment etc.) and make use of all Training sessions and Assessments by the Employer organization.</li>
+                        <li>In case of holding one offer, I will not attend for Campus (On/OFF) drive without prior approval from the concerned authority of the Institute (TPC).</li>
+                    </ul>
+
+                    <div style="margin-top: 24px;">
+                        <label class="checkbox-item" style="display: flex; gap: 12px; align-items: center; cursor: pointer;">
+                            <input type="checkbox" name="undertaking_agree" required style="width: 20px; height: 20px; accent-color: var(--primary);">
+                            <strong>I hereby declare that all the information provided by me is correct, and I agree to strictly uphold and abide by all T&P policies and guidelines mentioned above.</strong>
+                        </label>
+                    </div>
+
+                    <div class="sig-grid">
+                        <div class="form-group">
+                            <label>Student Signature / Confirmation:</label>
+                            <input type="text" name="student_sig" placeholder="Type Full Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Parent Signature / Confirmation:</label>
+                            <input type="text" name="parent_sig" placeholder="Type Parent Name" required>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Action Button Group -->
+                <div class="button-group">
+                    <button type="button" class="btn btn-preview" id="previewBtn">🔍 Preview Form</button>
+                    <button type="submit" class="btn btn-submit" id="submitBtn">🚀 Submit Application</button>
+                    <button type="button" class="btn btn-download" id="downloadBtn" onclick="window.print()">📥 Download Form (PDF)</button>
+                </div>
+
+                <div id="status-message"></div>
             </div>
+        </form>
+    </div>
+</div>
 
-            <button type="submit" class="submit-btn" id="submitBtn">Submit Placement Registration Form</button>
-            <div id="status-message"></div>
+<!-- Modal Preview Overlay -->
+<div class="modal-overlay" id="previewModal">
+    <div class="modal-card">
+        <div class="modal-header">
+            <h3>Application Summary Preview</h3>
+            <button class="modal-close" id="closeModalBtn">&times;</button>
         </div>
-    </form>
+        <div class="modal-body" id="modalPreviewBody">
+            <!-- Dynamic Preview Content Populated via JS -->
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-preview" id="editFormBtn" style="min-width: 120px;">Edit Form</button>
+            <button type="button" class="btn btn-submit" id="confirmSubmitBtn" style="min-width: 160px;">Confirm & Submit</button>
+        </div>
+    </div>
 </div>
 
 <script>
     const scriptURL = 'https://script.google.com/macros/s/AKfycbwXexJ1aLdDdUopzOFE6dg7u6qD0EQFpdI6Jty_b3tdJl3EW_INh2u7Z3jPJvznlbZ3/exec';
     const form = document.getElementById('placementForm');
     const submitBtn = document.getElementById('submitBtn');
+    const previewBtn = document.getElementById('previewBtn');
+    const downloadBtn = document.getElementById('downloadBtn');
     const statusMsg = document.getElementById('status-message');
+    
+    const previewModal = document.getElementById('previewModal');
+    const closeModalBtn = document.getElementById('closeModalBtn');
+    const editFormBtn = document.getElementById('editFormBtn');
+    const confirmSubmitBtn = document.getElementById('confirmSubmitBtn');
+    const modalPreviewBody = document.getElementById('modalPreviewBody');
 
+    // Function to generate dynamic preview html
+    function generatePreview() {
+        const formData = new FormData(form);
+        let html = `
+            <div class="preview-section">
+                <h4>A. Personal Information</h4>
+                <div class="preview-grid">
+                    <div class="preview-item"><label>Student Name</label><span>${formData.get('student_name') || 'N/A'}</span></div>
+                    <div class="preview-item"><label>Roll Number</label><span>${formData.get('roll_no') || 'N/A'}</span></div>
+                    <div class="preview-item"><label>Gender</label><span>${formData.get('gender') || 'N/A'}</span></div>
+                    <div class="preview-item"><label>Mobile</label><span>${formData.get('mobile') || 'N/A'}</span></div>
+                    <div class="preview-item"><label>Date of Birth</label><span>${formData.get('dob') || 'N/A'}</span></div>
+                    <div class="preview-item"><label>Aadhar Number</label><span>${formData.get('aadhar') || 'N/A'}</span></div>
+                    <div class="preview-item"><label>PAN Number</label><span>${formData.get('pan') || 'N/A'}</span></div>
+                    <div class="preview-item"><label>MGIT Email</label><span>${formData.get('mgit_email') || 'N/A'}</span></div>
+                    <div class="preview-item"><label>Personal Email</label><span>${formData.get('personal_email') || 'N/A'}</span></div>
+                </div>
+            </div>
+
+            <div class="preview-section">
+                <h4>B. Parents & Education</h4>
+                <div class="preview-grid">
+                    <div class="preview-item"><label>Father Name</label><span>${formData.get('father_name') || 'N/A'} (${formData.get('father_mobile') || ''})</span></div>
+                    <div class="preview-item"><label>Mother Name</label><span>${formData.get('mother_name') || 'N/A'} (${formData.get('mother_mobile') || ''})</span></div>
+                    <div class="preview-item"><label>B.Tech Branch</label><span>${formData.get('btech_branch') || 'N/A'}</span></div>
+                    <div class="preview-item"><label>B.Tech CGPA</label><span>${formData.get('btech_cgpa') || 'N/A'}</span></div>
+                    <div class="preview-item"><label>Backlogs</label><span>${formData.get('backlogs_exist') || 'No'} (${formData.get('no_of_backlogs') || '0'})</span></div>
+                </div>
+            </div>
+
+            <div class="preview-section">
+                <h4>C. Career Preference & Signatures</h4>
+                <div class="preview-grid">
+                    <div class="preview-item"><label>Career Option Selected</label><span>${formData.get('career_option') || 'N/A'}</span></div>
+                    <div class="preview-item"><label>Job Priority 1</label><span>${formData.get('prio_1') || 'N/A'}</span></div>
+                    <div class="preview-item"><label>Job Priority 2</label><span>${formData.get('prio_2') || 'N/A'}</span></div>
+                    <div class="preview-item"><label>Student Signature</label><span>${formData.get('student_sig') || 'N/A'}</span></div>
+                    <div class="preview-item"><label>Parent Signature</label><span>${formData.get('parent_sig') || 'N/A'}</span></div>
+                </div>
+            </div>
+        `;
+        modalPreviewBody.innerHTML = html;
+    }
+
+    // Preview Button Event
+    previewBtn.addEventListener('click', () => {
+        generatePreview();
+        previewModal.style.display = 'flex';
+    });
+
+    closeModalBtn.addEventListener('click', () => { previewModal.style.display = 'none'; });
+    editFormBtn.addEventListener('click', () => { previewModal.style.display = 'none'; });
+
+    confirmSubmitBtn.addEventListener('click', () => {
+        previewModal.style.display = 'none';
+        form.requestSubmit();
+    });
+
+    // Form Submission Handling
     form.addEventListener('submit', e => {
         e.preventDefault();
         submitBtn.disabled = true;
@@ -645,18 +995,20 @@
                 statusMsg.style.display = 'block';
                 statusMsg.style.backgroundColor = '#dcfce7';
                 statusMsg.style.color = '#166534';
-                statusMsg.innerText = 'Success! Your registration response has been saved to the Google Sheet.';
+                statusMsg.innerText = '✅ Success! Your registration response has been saved successfully.';
                 submitBtn.disabled = false;
-                submitBtn.innerText = 'Submit Placement Registration Form';
-                form.reset();
+                submitBtn.innerText = '🚀 Submit Application';
+                
+                // Show Download PDF button
+                downloadBtn.style.display = 'inline-flex';
             })
             .catch(error => {
                 statusMsg.style.display = 'block';
                 statusMsg.style.backgroundColor = '#fee2e2';
                 statusMsg.style.color = '#991b1b';
-                statusMsg.innerText = 'Error submitting response. Please verify the Web App URL or try again.';
+                statusMsg.innerText = '❌ Error submitting response. Please try again.';
                 submitBtn.disabled = false;
-                submitBtn.innerText = 'Submit Placement Registration Form';
+                submitBtn.innerText = '🚀 Submit Application';
             });
     });
 </script>
